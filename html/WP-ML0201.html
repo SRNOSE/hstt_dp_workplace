@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>아이디 찾기</title>
+    <link rel="stylesheet" href="../../css/wp.common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css" />
+    <script src="../../js/font.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+  </head>
+  <body>
+    <div class="wp-wrap" id="wrap">
+      <!-- Header -->
+      <div class="header-wrap" id="header">
+        <header>
+          <div class="info-bg-wrap">
+            <div class="info-wrap">
+              <h1>HAND SIGN TALK TALK</h1>
+              <div class="service-info">
+                <span>서비스 기간 : 20XX년 X월 X일 ~ 20XX년 X월 X일(기간 만료 <strong>00</strong>일 전)</span>
+              </div>
+              <div class="login-info">
+                <!-- 팝업 활성화 시 .login-info에 .active 클래스 추가 -->
+                <!-- 팝업 활성화 시 aria-label 열기/닫기 -->
+                <!-- 팝업 활성화 시 aria-expanded true/false -->
+                <button
+                  type="button"
+                  class="login-name"
+                  aria-label="계정정보 팝업 {열기}"
+                  aria-controls="loginPopup"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <strong>케이엘큐브님</strong>
+                </button>
+                <div class="login-popup" id="loginPopup" role="listbox" tabindex="-1">
+                  <div class="login-account">
+                    <span class="account-photo"></span>
+                    <div class="account-name">
+                      <span class="role">최고관리자</span>
+                      <span class="name"><strong>케이엘큐브</strong>님</span>
+                    </div>
+                  </div>
+                  <div class="login-option">
+                    <button type="button" class="btn secondary btn-account">
+                      <span>계정정보</span>
+                    </button>
+                    <button type="button" class="btn primary btn-login">
+                      <span>로그아웃</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // .info-wrap-wrap -->
+          <nav class="gnb-wrap">
+            <h2 class="sr-only">메인 메뉴</h2>
+            <ul class="gnb-list">
+              <li class="active">
+                <button type="button">
+                  <span>과금/결제 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>콘텐츠 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통역 콜 이력 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>고객센터</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통계</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>관리자 관리</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <!-- // .gnb-wrap -->
+        </header>
+      </div>
+      <!-- // Header -->
+
+      <div class="content-outer-wrap" id="content">
+        <!-- lnb -->
+        <div class="lnb-wrap" id="lnbWrap">
+          <!-- {대메뉴}에 현재 선택된 탭의 명칭을 추가해 주세요. -->
+          <h2 class="sr-only">{대메뉴} 서브 메뉴</h2>
+          <ul class="lnb-list" role="navigation">
+            <li class="active">
+              <button type="button">
+                <span>이용 요금 결제</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>결제내역</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>결제 수단 관리</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>서비스 해지</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="content-inner-wrap">
+          <div class="breadcrumb" aria-label="사이트 이동 경로">
+            <ol>
+              <li>
+                <a href="#">HOME</a>
+              </li>
+              <li>
+                <a href="#">과금/결제 관리</a>
+              </li>
+              <li>
+                <span aria-current="page">이용 요금 결제</span>
+              </li>
+            </ol>
+          </div>
+          <div class="content-wrap">
+            <div class="content-header line-bottom">
+              <h3 class="main-title">이용 요금 결제</h3>
+            </div>
+            <div class="content-body">
+              <section class="section">
+                <h4 class="sub-title">수어 안내 서비스 상품</h4>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // .wp-body -->
+
+      <div class="footer-wrap" id="footer">
+        <footer>Copyright ⓒ HAND SIGN TALK TALK. All Rights Reserved.</footer>
+      </div>
+    </div>
+    <!-- // .wp-wrap -->
+    <div class="modal-portal" id="modalPortal">
+      <!-- Modal 시작 -->
+      <div class="modal-wrap find-account-popup" id="findId">
+        <div class="modal-dialog-wrap">
+          <div class="modal-dialog">
+            <div class="modal-header">
+              <h5>아이디 찾기</h5>
+            </div>
+            <div class="modal-content">
+              <h6>아이디 찾기</h6>
+              <div class="find-account">
+                <p class="input-tip">회원 가입 시 입력하신 정보로 찾아보세요.</p>
+                <form action="">
+                  <fieldset>
+                    <legend>아이디 찾기 정보 입력</legend>
+                    <div class="input-wrap active-delete">
+                      <label for="userName" class="sr-only">
+                        <span>이름</span>
+                      </label>
+                      <div class="input">
+                        <input type="text" id="userName" placeholder="이름을 입력하세요." />
+                        <button type="button" class="btn-delete">
+                          <span class="sr-only">내용 삭제</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="input-wrap">
+                      <label for="userName" class="sr-only">
+                        <span>휴대폰 번호</span>
+                      </label>
+                      <div class="input">
+                        <input type="text" id="userName" placeholder="휴대폰 번호(- 없이)를 입력해 주세요." />
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="btn-wrap full center">
+                    <!-- 비활성화 시
+                    <button type="button" class="btn md tertiary btn-modal-ok">
+                      <span>확인</span>
+                    </button> -->
+                    <button type="button" class="btn md primary btn-modal-ok">
+                      <span>확인</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <button type="button" class="btn-modal-close">
+              <span class="sr-only">닫기</span>
+            </button>
+          </div>
+        </div>
+        <!-- // .modal-dialog -->
+      </div>
+      <!-- // Modal 끝 -->
+    </div>
+
+    <!-- Script -->
+    <script src="../../js/pub_index.js"></script>
+    <script>
+      modalComponent.onOpenModal('findId');
+    </script>
+    <!-- // Script -->
+  </body>
+</html>

@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>과금 및 결제 관리 &gt; 이용 요금 결제</title>
+    <link rel="stylesheet" href="../../css/wp.common.css" />
+    <script src="../../js/font.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+  </head>
+
+  <body>
+    <div class="wp-wrap" id="wrap">
+      <!-- Header -->
+      <div class="header-wrap" id="header">
+        <header>
+          <div class="info-bg-wrap">
+            <div class="info-wrap">
+              <h1>HAND SIGN TALK TALK</h1>
+              <div class="service-info">
+                <span>서비스 기간 : 20XX년 X월 X일 ~ 20XX년 X월 X일(기간 만료 <strong>00</strong>일 전)</span>
+              </div>
+              <div class="login-info">
+                <!-- 팝업 활성화 시 .login-info에 .active 클래스 추가 -->
+                <!-- 팝업 활성화 시 aria-label 열기/닫기 -->
+                <!-- 팝업 활성화 시 aria-expanded true/false -->
+                <button
+                  type="button"
+                  class="login-name"
+                  aria-label="계정정보 팝업 {열기}"
+                  aria-controls="loginPopup"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <strong>케이엘큐브님</strong>
+                </button>
+                <div class="login-popup" id="loginPopup" role="listbox" tabindex="-1">
+                  <div class="login-account">
+                    <span class="account-photo"></span>
+                    <div class="account-name">
+                      <span class="role">최고관리자</span>
+                      <span class="name"><strong>케이엘큐브</strong>님</span>
+                    </div>
+                  </div>
+                  <div class="login-option">
+                    <button type="button" class="btn secondary btn-account">
+                      <span>계정정보</span>
+                    </button>
+                    <button type="button" class="btn primary btn-login">
+                      <span>로그아웃</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // .info-wrap-wrap -->
+          <nav class="gnb-wrap">
+            <h2 class="sr-only">메인 메뉴</h2>
+            <ul class="gnb-list">
+              <li class="active">
+                <button type="button">
+                  <span>과금/결제 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>콘텐츠 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통역 콜 이력 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>고객센터</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통계</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>관리자 관리</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <!-- // .gnb-wrap -->
+        </header>
+      </div>
+      <!-- // Header -->
+
+      <div class="content-outer-wrap" id="content">
+        <!-- lnb -->
+        <div class="lnb-wrap" id="lnbWrap">
+          <button type="button" class="toggle-lnb">
+            <span class="sr-only">서브메뉴 열기</span>
+          </button>
+          <!-- {대메뉴}에 현재 선택된 탭의 명칭을 추가해 주세요. -->
+          <ul class="lnb-list" aria-label="{과금/결제 관리} 서브 메뉴">
+            <li class="active">
+              <button type="button">
+                <span>이용 요금 결제</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>결제내역</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>결제 수단 관리</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>서비스 해지</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="content-inner-wrap">
+          <div class="breadcrumb" aria-label="사이트 이동 경로">
+            <ol>
+              <li>
+                <a href="#">HOME</a>
+              </li>
+              <li>
+                <a href="#">과금/결제 관리</a>
+              </li>
+              <li>
+                <span aria-current="page">이용 요금 결제</span>
+              </li>
+            </ol>
+          </div>
+          <div class="content-wrap menu-payment-wrap">
+            <div class="content-header line-bottom">
+              <h3 class="main-title">이용 요금 결제</h3>
+            </div>
+            <div class="content-body">
+              <!-- 내용 입력 -->
+              <h4 class="sub-title">수어 안내 서비스 상품</h4>
+              <p class="sub-tit">수어 안내 서비스 상품을 선택해주세요.</p>
+              <!-- main-tab-wrap-->
+              <div class="tab-wrap radio main-tab" id="paymentTab">
+                <div class="tab-list">
+                  <div class="tab">
+                    <div class="radio-wrap radio-tab">
+                      <!-- input아이디와 label의 for 일치시켜주세요 -->
+                      <input type="radio" id="radio01" name="defaultRadio" />
+                      <label for="radio01">
+                        <h5>핸드사인톡톡 APP형</h5>
+                        <p>
+                          핸드사인톡톡(청각 장애인 전용) APP <br />
+                          수어 안내 서비스 제공
+                        </p>
+                        <span class="img-wrap">
+                          <img
+                            src="../../images/wp/visual/visual_img_1_1.png"
+                            alt="핸드사인톡톡App형 핸드사인톡톡(청각장애인 전용) APP수어 안내 서비스 제공"
+                          />
+                        </span>
+                        <span class="btn md btn-primary btn-select">선택</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="tab">
+                    <div class="radio-wrap radio-tab">
+                      <!-- input아이디와 label의 for 일치시켜주세요. -->
+                      <input type="radio" id="radio02" name="defaultRadio" />
+                      <label for="radio02">
+                        <h5>홈페이지 API 연동형</h5>
+                        <p>홈페이지(PC, Mobile, Kiosk) Api 연동<br />수어 안내 서비스 제공</p>
+                        <span class="img-wrap">
+                          <img
+                            src="../../images/wp/visual/visual_img_1_2.png"
+                            alt="홈페이지 API 연동형 홈페이지(PC, Mobile, Kiosk) Api 연동 수어 안내 서비스 제공"
+                          />
+                        </span>
+                        <span class="btn md btn-primary btn-select">선택</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="tab">
+                    <div class="radio-wrap radio-tab">
+                      <!-- input아이디와 label의 for 일치시켜주세요. -->
+                      <input type="radio" id="radio03" name="defaultRadio" />
+                      <label for="radio03">
+                        <h5>통합형(APP+API)</h5>
+                        <p>핸드사인톡톡 App + 홈페이지 Api 연동<br />수어 안내 서비스 제공</p>
+                        <span class="img-wrap">
+                          <img
+                            src="../../images/wp/visual/visual_img_1_3.png"
+                            alt="통합형(APP+API) 핸드사인톡톡 App + 홈페이지 Api 연동 수어 안내 서비스 제공"
+                          />
+                        </span>
+                        <span class="btn md btn-primary btn-select">선택</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-panels">
+                  <!-- 핸드사인톡톡 APP형 -->
+                  <div class="tab-panel">
+                    <section class="section">
+                      <form action="">
+                        <fieldset>
+                          <legend>이용 요금 선택</legend>
+                          <h4 class="sub-title" id="tabPayment0">이용 요금</h4>
+                          <p class="sub-tit">서비스 기간 선택 후 월 이용료 선 결제 후 사용 가능합니다.</p>
+                          <div class="table-wrap">
+                            <table class="table horizontal">
+                              <colgroup>
+                                <col class="colWidth210" />
+                                <col class="colWidthAuto" />
+                              </colgroup>
+                              <caption>
+                                이용요금 정보.서비스 기간, 상품금액으로 구성.
+                              </caption>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">서비스 기간</th>
+                                  <td>
+                                    <!-- input id와 label의 for 일치시켜주세요 -->
+                                    <div class="radio-group radio-btns" aria-label="서비스 기간 선택">
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio1-1" name="defaultRadio1" />
+                                        <label for="radio1-1">
+                                          <span>1개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio1-2" name="defaultRadio1" />
+                                        <label for="radio1-2">
+                                          <span>2개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio1-3" name="defaultRadio1" />
+                                        <label for="radio1-3">
+                                          <span>3개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio1-4" name="defaultRadio1" />
+                                        <label for="radio1-4">
+                                          <span>4개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio1-5" name="defaultRadio1" />
+                                        <label for="radio1-5">
+                                          <span>5개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio1-6" name="defaultRadio1" />
+                                        <label for="radio1-6">
+                                          <span>6개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio1-7" name="defaultRadio1" />
+                                        <label for="radio1-7">
+                                          <span>7개월</span>
+                                        </label>
+                                      </div>
+                                      <span class="sm-tit">(<em>2023.09.05</em><em>~</em><em>2023.09.30</em>)</span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="colWidth210">상품 금액</th>
+                                  <td>
+                                    <div class="price-info">
+                                      <span class="big-bold">1개월</span>
+                                      <span class="big-bold">결제 금액 : <strong>100,000</strong>원<b>(부가세 포함)</b></span>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </fieldset>
+                        <fieldset>
+                          <legend>결제 수단 선택</legend>
+                          <h4 class="sub-title">결제 수단</h4>
+                          <p class="sub-tit border-bottom">결제 수단을 선택해주세요.</p>
+                          <!-- 결제수단 tab -->
+                          <div class="tab-wrap radio payment-tab">
+                            <div class="tab-list">
+                              <div class="tab">
+                                <div class="radio-wrap radio-img-btn">
+                                  <!-- input 아이디와 label의 for 일치시켜주세요 -->
+                                  <input type="radio" id="radio2-1" name="defaultRadio2" />
+                                  <label for="radio2-1">
+                                    <span class="img-btn"></span>
+                                    <span>신용카드</span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="tab">
+                                <div class="radio-wrap radio-img-btn no-bank">
+                                  <!-- input 아이디와 label의 for 일치시켜주세요 -->
+                                  <input type="radio" id="radio2-2" name="defaultRadio2" />
+                                  <label for="radio2-2">
+                                    <span class="img-btn"></span>
+                                    <span>무통장입금</span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="tab disabled no-img-btn">
+                                <p>계좌이체<br />준비중</p>
+                              </div>
+                              <div class="tab disabled no-img-btn">
+                                <p>가상계좌<br />준비중</p>
+                              </div>
+                            </div>
+                            <div class="tab-panels">
+                              <!-- 신용카드 선택했을 경우 -->
+                              <div class="tab-panel">
+                                <div class="table-wrap">
+                                  <table class="table horizontal">
+                                    <colgroup>
+                                      <col class="colWidth210" />
+                                      <col class="colWidthAuto" />
+                                    </colgroup>
+                                    <caption>
+                                      결제수단. 카드 구분, 카드 선택, 할부 기간으로 구성
+                                    </caption>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">카드 구분</th>
+                                        <td>
+                                          <div class="radio-group radio-side-btns" aria-label="개인카드, 법인카드 선택">
+                                            <div class="radio-wrap circle">
+                                              <!-- input 아이디와 label의 for 일치시켜주세요. -->
+                                              <input type="radio" id="radio3-1" name="defaultRadio3" />
+                                              <label for="radio3-1">
+                                                <span>개인카드</span>
+                                              </label>
+                                            </div>
+                                            <div class="radio-wrap circle">
+                                              <input type="radio" id="radio3-2" name="defaultRadio3" />
+                                              <label for="radio3-2">
+                                                <span>법인카드</span>
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">카드 선택</th>
+                                        <td>
+                                          <div class="select-wrap card-kind">
+                                            <button type="button" class="selected" aria-label="카드종류 선택">선택해 주세요.</button>
+                                            <ul class="select-list">
+                                              <li class="option">
+                                                <span>신한카드</span>
+                                              </li>
+                                              <li class="option">
+                                                <span>국민카드</span>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">할부 기간</th>
+                                        <td>
+                                          <div class="select-wrap monthly">
+                                            <button type="button" class="selected" aria-label="할부 기간 선택">일시불</button>
+                                            <ul class="select-list">
+                                              <li class="option">
+                                                <span>일시불</span>
+                                              </li>
+                                              <li class="option">
+                                                <span>1개월</span>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <!-- 무통장입금 선택했을 경우 -->
+                              <div class="tab-panel">
+                                <div class="bank-info">
+                                  <p class="notice-tit">※ 결제하기 버튼 클릭 후 전용계좌에 결제금액을 입금하여 주십시오.</p>
+                                  <ul class="bank-box">
+                                    <li>
+                                      <p>
+                                        입금은행 &#58;
+                                        <span>기업은행(000-000000-00-000)</span>
+                                      </p>
+                                    </li>
+                                    <li>
+                                      <p>예금주 &#58; <span>(주)KLCube</span></p>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="table-title">
+                                  <h4 class="sub-title">세금계산서 신청</h4>
+                                </div>
+                                <div class="table-wrap">
+                                  <table class="table horizontal">
+                                    <colgroup>
+                                      <col class="colWidth210" />
+                                      <col class="colWidthAuto" />
+                                    </colgroup>
+                                    <caption>
+                                      세금계산서 신청. 사업자 등록번호, 세금계산서 발행, 세금계산서 발행 이메일로 구성
+                                    </caption>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">
+                                          <label for="businessNumber">
+                                            <span>사업자 등록번호</span>
+                                          </label>
+                                        </th>
+                                        <td>
+                                          <div class="input-wrap company-number">
+                                            <div class="input">
+                                              <!-- input에 disabled 넣으면 비활성화 -->
+                                              <input type="text" id="businessNumber" />
+                                            </div>
+                                            <div class="input">
+                                              <input type="text" id="businessNumber2" />
+                                            </div>
+                                            <div class="input">
+                                              <input type="text" id="businessNumber3" />
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">세금계산서 발행</th>
+                                        <td>
+                                          <div class="radio-group radio-side-btns" aria-label="세금계산서 발행 당월, 익월 선택">
+                                            <div class="radio-wrap circle">
+                                              <!-- input 아이디와 label의 for 일치시켜주세요. -->
+                                              <input type="radio" id="radio4-1" name="defaultRadio4" />
+                                              <label for="radio4-1">
+                                                <span>당월</span>
+                                              </label>
+                                            </div>
+                                            <div class="radio-wrap circle">
+                                              <input type="radio" id="radio4-2" name="defaultRadio4" />
+                                              <label for="radio4-2">
+                                                <span>익월</span>
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">
+                                          <label for="taxBillReceipt">
+                                            <span>세금계산서 발행 이메일</span>
+                                          </label>
+                                        </th>
+                                        <td>
+                                          <div class="input-wrap tax-bill">
+                                            <div class="input">
+                                              <input type="text" id="taxBillReceipt" />
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <div class="checkbox-wrap circle">
+                          <!-- input 아이디와 label의 for 일치시켜주세요. -->
+                          <input type="checkbox" id="check1-1" />
+                          <label for="check1-1">
+                            <span>서비스 이용 요금 내용을 확인하였으며, 정보 제공 등에 동의합니다.</span>
+                          </label>
+                        </div>
+                        <div class="btn-wrap center">
+                          <button type="button" class="btn lg primary btn-payment">
+                            <span>결제하기</span>
+                          </button>
+                        </div>
+                      </form>
+                    </section>
+                  </div>
+                  <!-- 홈페이지 API 연동형 -->
+                  <div class="tab-panel">
+                    <section class="section">
+                      <form action="">
+                        <fieldset>
+                          <legend>이용 요금 선택</legend>
+                          <h4 class="sub-title" id="tabPayment1">이용 요금</h4>
+                          <p class="sub-tit">수어 문장 제작 비용 결제 후 사용 가능합니다.</p>
+                          <div class="table-wrap">
+                            <table class="table horizontal">
+                              <colgroup>
+                                <col class="colWidth210" />
+                                <col class="colWidthAuto" />
+                              </colgroup>
+                              <caption>
+                                이용요금 정보.수어 문장 수, 서비스 기간, 상품금액으로 구성
+                              </caption>
+                              <tbody>
+                                <tr>
+                                  <th scope="row" class="colWidth210">수어 문장 수</th>
+                                  <td>
+                                    <!-- input id와 label의 for 일치시켜주세요 -->
+                                    <div class="radio-group radio-btns" aria-label="수어 문장 수 선택">
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio5-1" name="defaultRadio5" />
+                                        <label for="radio5-1">
+                                          <span>500문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio5-2" name="defaultRadio5" />
+                                        <label for="radio5-2">
+                                          <span>1,000문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio5-3" name="defaultRadio5" />
+                                        <label for="radio5-3">
+                                          <span>2,000문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio5-4" name="defaultRadio5" />
+                                        <label for="radio5-4">
+                                          <span>3,000문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio5-5" name="defaultRadio5" />
+                                        <label for="radio5-5">
+                                          <span>4,000문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio5-6" name="defaultRadio5" />
+                                        <label for="radio5-6">
+                                          <span>5,000문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio5-7" name="defaultRadio5" />
+                                        <label for="radio5-7">
+                                          <span>10,000문장</span>
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="colWidth210">서비스 기간</th>
+                                  <td>
+                                    <span class="big-bold">1년(<em>2023.09.05</em><em>~</em><em>2023.09.30</em>)</span>
+                                    <p class="add-tit">&#42;신청일로부터 1년 후 서비스 기간 연장 및 결제 필요한 상품입니다.</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="colWidth210">상품 금액</th>
+                                  <td>
+                                    <div class="price-info">
+                                      <span class="big-bold">500문장</span>
+                                      <span class="big-bold">결제 금액 : <strong>5,000,000</strong>원<b>(부가세 포함)</b></span>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </fieldset>
+                        <fieldset>
+                          <legend>결제 수단 선택</legend>
+                          <h4 class="sub-title">결제 수단</h4>
+                          <p class="sub-tit border-bottom">결제 수단을 선택해주세요.</p>
+                          <!-- 결제수단 tab -->
+                          <div class="tab-wrap radio payment-tab">
+                            <div class="tab-list">
+                              <div class="tab">
+                                <div class="radio-wrap radio-img-btn">
+                                  <!-- input 아이디와 label의 for 일치시켜주세요 -->
+                                  <input type="radio" id="radio6-1" name="defaultRadio6" />
+                                  <label for="radio6-1">
+                                    <span class="img-btn"></span>
+                                    <span>신용카드</span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="tab">
+                                <div class="radio-wrap radio-img-btn no-bank">
+                                  <!-- input 아이디와 label의 for 일치시켜주세요 -->
+                                  <input type="radio" id="radio6-2" name="defaultRadio6" />
+                                  <label for="radio6-2">
+                                    <span class="img-btn"></span>
+                                    <span>무통장입금</span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="tab disabled no-img-btn">
+                                <p>계좌이체<br />준비중</p>
+                              </div>
+                              <div class="tab disabled no-img-btn">
+                                <p>가상계좌<br />준비중</p>
+                              </div>
+                            </div>
+                            <div class="tab-panels">
+                              <!-- 신용카드 선택했을 경우 -->
+                              <div class="tab-panel">
+                                <div class="table-wrap">
+                                  <table class="table horizontal">
+                                    <colgroup>
+                                      <col class="colWidth210" />
+                                      <col class="colWidthAuto" />
+                                    </colgroup>
+                                    <caption>
+                                      결제수단. 카드 구분, 카드 선택, 할부 기간으로 구성
+                                    </caption>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">카드 구분</th>
+                                        <td>
+                                          <div class="radio-group radio-side-btns" aria-label="개인카드, 법인카드 선택">
+                                            <div class="radio-wrap circle">
+                                              <!-- input 아이디와 label의 for 일치시켜주세요. -->
+                                              <input type="radio" id="radio7-1" name="defaultRadio7" />
+                                              <label for="radio7-1">
+                                                <span>개인카드</span>
+                                              </label>
+                                            </div>
+                                            <div class="radio-wrap circle">
+                                              <input type="radio" id="radio7-2" name="defaultRadio7" />
+                                              <label for="radio7-2">
+                                                <span>법인카드</span>
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">카드 선택</th>
+                                        <td>
+                                          <div class="select-wrap card-kind">
+                                            <button type="button" class="selected" aria-label="카드종류 선택">선택해 주세요.</button>
+                                            <ul class="select-list">
+                                              <li class="option">
+                                                <span>신한카드</span>
+                                              </li>
+                                              <li class="option">
+                                                <span>국민카드</span>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">할부 기간</th>
+                                        <td>
+                                          <div class="select-wrap monthly">
+                                            <button type="button" class="selected" aria-label="할부 기간 선택">일시불</button>
+                                            <ul class="select-list">
+                                              <li class="option">
+                                                <span>일시불</span>
+                                              </li>
+                                              <li class="option">
+                                                <span>1개월</span>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <!-- 무통장입금 선택했을 경우 -->
+                              <div class="tab-panel">
+                                <div class="bank-info">
+                                  <p class="notice-tit">※ 결제하기 버튼 클릭 후 전용계좌에 결제금액을 입금하여 주십시오.</p>
+                                  <ul class="bank-box">
+                                    <li>
+                                      <p>
+                                        입금은행 &#58;
+                                        <span>기업은행(000-000000-00-000)</span>
+                                      </p>
+                                    </li>
+                                    <li>
+                                      <p>예금주 &#58; <span>(주)KLCube</span></p>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="table-title">
+                                  <h4 class="sub-title">세금계산서 신청</h4>
+                                </div>
+                                <div class="table-wrap">
+                                  <table class="table horizontal">
+                                    <colgroup>
+                                      <col class="colWidth210" />
+                                      <col class="colWidthAuto" />
+                                    </colgroup>
+                                    <caption>
+                                      세금계산서 신청. 사업자 등록번호, 세금계산서 발행, 세금계산서 발행 이메일로 구성
+                                    </caption>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">
+                                          <label for="businessNumber1-1">
+                                            <span>사업자 등록번호</span>
+                                          </label>
+                                        </th>
+                                        <td>
+                                          <div class="input-wrap company-number">
+                                            <div class="input">
+                                              <!-- input에 disabled 넣으면 비활성화 -->
+                                              <input type="text" id="businessNumber1-1" />
+                                            </div>
+                                            <div class="input">
+                                              <input type="text" id="businessNumber1-2" />
+                                            </div>
+                                            <div class="input">
+                                              <input type="text" id="businessNumber1-3" />
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">세금계산서 발행</th>
+                                        <td>
+                                          <div class="radio-group radio-side-btns" aria-label="세금계산서 발행 당월, 익월 선택">
+                                            <div class="radio-wrap circle">
+                                              <!-- input 아이디와 label의 for 일치시켜주세요. -->
+                                              <input type="radio" id="radio8-1" name="defaultRadio8" />
+                                              <label for="radio8-1">
+                                                <span>당월</span>
+                                              </label>
+                                            </div>
+                                            <div class="radio-wrap circle">
+                                              <input type="radio" id="radio8-2" name="defaultRadio8" />
+                                              <label for="radio8-2">
+                                                <span>익월</span>
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">
+                                          <label for="taxBillReceipt">
+                                            <span>세금계산서 발행 이메일</span>
+                                          </label>
+                                        </th>
+                                        <td>
+                                          <div class="input-wrap tax-bill">
+                                            <div class="input">
+                                              <input type="text" id="taxBillReceipt" />
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <div class="checkbox-wrap circle">
+                          <!-- input 아이디와 label의 for 일치시켜주세요. -->
+                          <input type="checkbox" id="check2-1" />
+                          <label for="check2-1">
+                            <span>서비스 이용 요금 내용을 확인하였으며, 정보 제공 등에 동의합니다.</span>
+                          </label>
+                        </div>
+                        <div class="btn-wrap center">
+                          <button type="button" class="btn lg primary btn-payment">
+                            <span>결제하기</span>
+                          </button>
+                        </div>
+                      </form>
+                    </section>
+                  </div>
+                  <!-- 통합형(APP + API) -->
+                  <div class="tab-panel">
+                    <section class="section">
+                      <form action="">
+                        <fieldset>
+                          <legend>이용 요금 선택</legend>
+                          <h4 class="sub-title" id="tabPayment2">이용 요금</h4>
+                          <p class="sub-tit">월 이용료 및 수어 문장 제작 비용 결제 후 사용 가능합니다.</p>
+                          <div class="table-wrap">
+                            <span class="above-tbl">(월 이용료)</span>
+                            <table class="table horizontal">
+                              <colgroup>
+                                <col class="colWidth210" />
+                                <col class="colWidthAuto" />
+                              </colgroup>
+                              <caption>
+                                월 이용 요금 정보.서비스 기간, 상품금액으로 구성
+                              </caption>
+                              <tbody>
+                                <tr>
+                                  <th scope="row" class="colWidth210">서비스 기간</th>
+                                  <td>
+                                    <!-- input id와 label의 for 일치시켜주세요 -->
+                                    <div class="radio-group radio-btns" aria-label="서비스 기간 선택">
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio9-1" name="defaultRadio9" />
+                                        <label for="radio9-1">
+                                          <span>1개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio9-2" name="defaultRadio9" />
+                                        <label for="radio9-2">
+                                          <span>2개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio9-3" name="defaultRadio9" />
+                                        <label for="radio9-3">
+                                          <span>3개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio9-4" name="defaultRadio9" />
+                                        <label for="radio9-4">
+                                          <span>4개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio9-5" name="defaultRadio9" />
+                                        <label for="radio9-5">
+                                          <span>5개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio9-6" name="defaultRadio9" />
+                                        <label for="radio9-6">
+                                          <span>6개월</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio9-7" name="defaultRadio9" aria-checked="true" tabindex="-1" />
+                                        <label for="radio9-7">
+                                          <span>12개월</span>
+                                        </label>
+                                      </div>
+                                      <span>(<em>2023.09.05</em><em>~</em><em>2023.09.30</em>)</span>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="colWidth210">상품 금액</th>
+                                  <td>
+                                    <div class="price-info">
+                                      <span class="md-tit">1개월</span>
+                                      <span class="md-tit">결제 금액 : <strong>100,000</strong>원<b>(부가세 포함)</b></span>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="table-wrap mt60">
+                            <span class="above-tbl">(수어 문장 제작 비율)</span>
+                            <table class="table horizontal">
+                              <colgroup>
+                                <col class="colWidth210" />
+                                <col class="colWidthAuto" />
+                              </colgroup>
+                              <caption>
+                                수어 문장 제작 비율 이용요금 정보. 수어 문장 수, 서비스 기간, 상품금액으로 구성
+                              </caption>
+                              <tbody>
+                                <tr>
+                                  <th scope="row" class="colWidth210">수어 문장 수</th>
+                                  <td>
+                                    <!-- input id와 label의 for 일치시켜주세요 -->
+                                    <div class="radio-group radio-btns" aria-label="수어 문장 수 선택">
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio10-1" name="defaultRadio10" />
+                                        <label for="radio10-1">
+                                          <span>500문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio10-2" name="defaultRadio10" />
+                                        <label for="radio10-2">
+                                          <span>1,000문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio10-3" name="defaultRadio10" />
+                                        <label for="radio10-3">
+                                          <span>2,000문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio10-4" name="defaultRadio10" />
+                                        <label for="radio10-4">
+                                          <span>3,000문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio10-5" name="defaultRadio10" />
+                                        <label for="radio10-5">
+                                          <span>4,000문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio10-6" name="defaultRadio10" />
+                                        <label for="radio10-6">
+                                          <span>5,000문장</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap button">
+                                        <input type="radio" id="radio10-7" name="defaultRadio10" />
+                                        <label for="radio10-7">
+                                          <span>10,000문장</span>
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="colWidth210">서비스 기간</th>
+                                  <td>
+                                    <span class="big-bold">1년(<em>2023.09.05</em><em>~</em><em>2023.09.30</em>)</span>
+                                    <p class="add-tit">*신청일로부터 1년 후 서비스 기간 연장 및 결제 필요한 상품입니다.</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="colWidth210">상품 금액</th>
+                                  <td>
+                                    <div class="price-info">
+                                      <span class="md-tit">500 문장</span>
+                                      <span class="md-tit">결제 금액 : <strong>5,000,000</strong>원<b>(부가세 포함)</b></span>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="total-amount">
+                            <span class="total-amount-tit">총액</span>
+                            <p class="amount-info">
+                              <span><em>1개월</em> &#43;<em>500 문장</em></span>
+                              <span class="big-bold">총 결제 금액 : <strong>5,100,000</strong>원<b>(부가세 포함)</b></span>
+                            </p>
+                          </div>
+                        </fieldset>
+                        <fieldset>
+                          <legend>결제 수단 선택</legend>
+                          <h4 class="sub-title">결제 수단</h4>
+                          <p class="sub-tit border-bottom">결제 수단을 선택해주세요.</p>
+                          <!-- 결제수단 tab -->
+                          <div class="tab-wrap radio payment-tab">
+                            <div class="tab-list">
+                              <div class="tab">
+                                <div class="radio-wrap radio-img-btn">
+                                  <!-- input 아이디와 label의 for 일치시켜주세요 -->
+                                  <input type="radio" id="radio11-1" name="defaultRadio11" />
+                                  <label for="radio11-1">
+                                    <span class="img-btn"></span>
+                                    <span>신용카드</span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="tab">
+                                <div class="radio-wrap radio-img-btn no-bank">
+                                  <!-- input 아이디와 label의 for 일치시켜주세요 -->
+                                  <input type="radio" id="radio11-2" name="defaultRadio11" />
+                                  <label for="radio11-2">
+                                    <span class="img-btn"></span>
+                                    <span>무통장입금</span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="tab disabled no-img-btn">
+                                <p>계좌이체<br />준비중</p>
+                              </div>
+                              <div class="tab disabled no-img-btn">
+                                <p>가상계좌<br />준비중</p>
+                              </div>
+                            </div>
+                            <div class="tab-panels">
+                              <!-- 신용카드 선택했을 경우 -->
+                              <div class="tab-panel">
+                                <div class="table-wrap">
+                                  <table class="table horizontal">
+                                    <colgroup>
+                                      <col class="colWidth210" />
+                                      <col class="colWidthAuto" />
+                                    </colgroup>
+                                    <caption>
+                                      결제수단. 카드 구분, 카드 선택, 할부 기간으로 구성
+                                    </caption>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">카드 구분</th>
+                                        <td>
+                                          <div class="radio-group radio-side-btns" aria-label="개인카드, 법인카드 선택">
+                                            <div class="radio-wrap circle">
+                                              <!-- input 아이디와 label의 for 일치시켜주세요. -->
+                                              <input type="radio" id="radio19-1" name="defaultRadio12" />
+                                              <label for="radio19-1">
+                                                <span>개인카드</span>
+                                              </label>
+                                            </div>
+                                            <div class="radio-wrap circle">
+                                              <input type="radio" id="radio19-2" name="defaultRadio12" />
+                                              <label for="radio19-2">
+                                                <span>법인카드</span>
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">카드 선택</th>
+                                        <td>
+                                          <div class="select-wrap card-kind">
+                                            <button type="button" class="selected" aria-label="카드종류 선택">선택해 주세요.</button>
+                                            <ul class="select-list">
+                                              <li class="option">
+                                                <span>신한카드</span>
+                                              </li>
+                                              <li class="option">
+                                                <span>국민카드</span>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">할부 기간</th>
+                                        <td>
+                                          <div class="select-wrap monthly">
+                                            <button type="button" class="selected" aria-label="할부 기간 선택">일시불</button>
+                                            <ul class="select-list">
+                                              <li class="option">
+                                                <span>일시불</span>
+                                              </li>
+                                              <li class="option">
+                                                <span>1개월</span>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <!-- 무통장입금 선택했을 경우 -->
+                              <div class="tab-panel">
+                                <div class="bank-info">
+                                  <p class="notice-tit">※ 결제하기 버튼 클릭 후 전용계좌에 결제금액을 입금하여 주십시오.</p>
+                                  <ul class="bank-box">
+                                    <li>
+                                      <p>
+                                        입금은행 &#58;
+                                        <span>기업은행(000-000000-00-000)</span>
+                                      </p>
+                                    </li>
+                                    <li>
+                                      <p>예금주 &#58; <span>(주)KLCube</span></p>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="table-title">
+                                  <h4 class="sub-title">세금계산서 신청</h4>
+                                </div>
+                                <div class="table-wrap">
+                                  <table class="table horizontal">
+                                    <colgroup>
+                                      <col class="colWidth210" />
+                                      <col class="colWidthAuto" />
+                                    </colgroup>
+                                    <caption>
+                                      세금계산서 신청. 사업자 등록번호, 세금계산서 발행, 세금계산서 발행 이메일로 구성
+                                    </caption>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">
+                                          <label for="businessNumber2-1">
+                                            <span>사업자 등록번호</span>
+                                          </label>
+                                        </th>
+                                        <td>
+                                          <div class="input-wrap company-number">
+                                            <div class="input">
+                                              <!-- input에 disabled 넣으면 비활성화 -->
+                                              <input type="text" id="businessNumber2-1" />
+                                            </div>
+                                            <div class="input">
+                                              <input type="text" id="businessNumber2-2" />
+                                            </div>
+                                            <div class="input">
+                                              <input type="text" id="businessNumber2-3" />
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">세금계산서 발행</th>
+                                        <td>
+                                          <div class="radio-group radio-side-btns" aria-label="세금계산서 발행 당월, 익월 선택">
+                                            <div class="radio-wrap circle">
+                                              <!-- input 아이디와 label의 for 일치시켜주세요. -->
+                                              <input type="radio" id="radio13-1" name="defaultRadio13" />
+                                              <label for="radio13-1">
+                                                <span>당월</span>
+                                              </label>
+                                            </div>
+                                            <div class="radio-wrap circle">
+                                              <input type="radio" id="radio13-2" name="defaultRadio13" />
+                                              <label for="radio13-2">
+                                                <span>익월</span>
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row" class="colWidth420">
+                                          <label for="taxBillReceipt">
+                                            <span>세금계산서 발행 이메일</span>
+                                          </label>
+                                        </th>
+                                        <td>
+                                          <div class="input-wrap tax-bill">
+                                            <div class="input">
+                                              <input type="text" id="taxBillReceipt" />
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <div class="checkbox-wrap circle">
+                          <!-- input 아이디와 label의 for 일치시켜주세요. -->
+                          <input type="checkbox" id="check3-1" />
+                          <label for="check3-1">
+                            <span>서비스 이용 요금 내용을 확인하였으며, 정보 제공 등에 동의합니다.</span>
+                          </label>
+                        </div>
+                        <div class="btn-wrap center">
+                          <button type="button" class="btn lg primary btn-payment">
+                            <span>결제하기</span>
+                          </button>
+                        </div>
+                      </form>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <!-- main-tab-wrap- -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // .wp-body -->
+
+      <div class="footer-wrap" id="footer">
+        <footer>Copyright ⓒ HAND SIGN TALK TALK. All Rights Reserved.</footer>
+      </div>
+    </div>
+    <!-- // .wp-wrap -->
+
+    <!-- Script -->
+    <script src="../../js/pub_index.js"></script>
+    <script>
+      const mainTab = document.getElementById('paymentTab').querySelector('.tab-list');
+      const mainTabBtns = mainTab.querySelectorAll('.tab');
+
+      mainTabBtns.forEach((btn, index) => {
+        const target = document.getElementById(`tabPayment${index}`);
+        btn.addEventListener('click', () => {
+          const paddingTop = 20;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY - paddingTop;
+          window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth',
+          });
+        });
+      });
+    </script>
+    <!-- // Script -->
+  </body>
+</html>

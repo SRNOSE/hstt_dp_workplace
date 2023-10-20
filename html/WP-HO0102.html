@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HOME &gt; 서비스 선결제 후 이용안내</title>
+    <link rel="stylesheet" href="../../css/wp.common.css" />
+    <script src="../../js/font.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+  </head>
+
+  <body>
+    <div class="wp-wrap no-lnb" id="wrap">
+      <!-- Header -->
+      <div class="header-wrap" id="header">
+        <header>
+          <div class="info-bg-wrap">
+            <div class="info-wrap">
+              <h1>HAND SIGN TALK TALK</h1>
+              <div class="service-info">
+                <span>서비스 기간 : 20XX년 X월 X일 ~ 20XX년 X월 X일(기간 만료 <strong>00</strong>일 전)</span>
+              </div>
+              <div class="login-info">
+                <!-- 팝업 활성화 시 .login-info에 .active 클래스 추가 -->
+                <!-- 팝업 활성화 시 aria-label 열기/닫기 -->
+                <!-- 팝업 활성화 시 aria-expanded true/false -->
+                <button
+                  type="button"
+                  class="login-name"
+                  aria-label="계정정보 팝업 {열기}"
+                  aria-controls="loginPopup"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <strong>케이엘큐브님</strong>
+                </button>
+                <div class="login-popup" id="loginPopup" role="listbox" tabindex="-1">
+                  <div class="login-account">
+                    <span class="account-photo"></span>
+                    <div class="account-name">
+                      <span class="role">최고관리자</span>
+                      <span class="name"><strong>케이엘큐브</strong>님</span>
+                    </div>
+                  </div>
+                  <div class="login-option">
+                    <button type="button" class="btn secondary btn-account">
+                      <span>계정정보</span>
+                    </button>
+                    <button type="button" class="btn primary btn-login">
+                      <span>로그아웃</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // .info-wrap-wrap -->
+          <nav class="gnb-wrap">
+            <h2 class="sr-only">메인 메뉴</h2>
+            <ul class="gnb-list">
+              <li>
+                <button type="button">
+                  <span>과금/결제 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>콘텐츠 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통역 콜 이력 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>고객센터</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통계</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>관리자 관리</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <!-- // .gnb-wrap -->
+        </header>
+      </div>
+      <!-- // Header -->
+
+      <div class="content-outer-wrap" id="content">
+        <div class="content-inner-wrap">
+          <div class="content-wrap menu-home-wrap">
+            <div class="home-body">
+              <ul class="home-body-box">
+                <li>
+                  <div class="home-head">
+                    <h3 class="home-title">공지사항</h3>
+                    <a href="javascript:;" class="btn-detail" target="_blank" role="button" title="화면 이동">상세보기</a>
+                  </div>
+                  <div class="home-content notice-table">
+                    <div class="no-post">등록된 게시글이 없습니다.</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="home-head">
+                    <h3 class="home-title">1:1 문의</h3>
+                    <a href="javascript:;" class="btn-detail" target="_blank" role="button" title="화면 이동">상세보기</a>
+                  </div>
+                  <div class="home-content home-table">
+                    <div class="no-post">등록된 게시글이 없습니다.</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="home-head">
+                    <h3 class="home-title">통계</h3>
+                    <a href="javascript:;" class="btn-detail" target="_blank" role="button" title="화면 이동">상세보기</a>
+                  </div>
+                  <div class="home-content stats-wrap">
+                    <div class="no-post">등록된 게시글이 없습니다.</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="home-head">
+                    <h3 class="home-title">서비스 콘텐츠 관리</h3>
+                    <a href="javascript:;" class="btn-detail" target="_blank" role="button" title="화면 이동">상세보기</a>
+                  </div>
+                  <div class="home-content home-table">
+                    <div class="no-post">등록된 게시글이 없습니다.</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // .wp-body -->
+
+      <div class="footer-wrap" id="footer">
+        <footer>Copyright ⓒ HAND SIGN TALK TALK. All Rights Reserved.</footer>
+      </div>
+    </div>
+    <!-- // .wp-wrap -->
+    <div class="modal-portal" id="modalPortal">
+      <!-- #modalPortal 안에 모달 소스 위치 -->
+
+      <!-- // .modal-wrap -->
+      <div class="modal-wrap" id="servicePrepaid">
+        <div class="modal-dialog-wrap">
+          <div class="modal-dialog">
+            <div class="modal-header">
+              <h5>서비스 선결제 후 이용안내</h5>
+            </div>
+            <div class="modal-content">
+              <p class="introduce-tit">핸드사인톡톡 <span class="blue-tit">서비스 신청 승인</span>되었습니다</p>
+              <p class="introduce-tit"><span class="red-tit">핸드사인톡톡 선결제 후 모든 서비스 이용이 가능합니다.</span></p>
+              <p class="introduce-tit">결제하기 버튼 클릭 하시면 결제 안내 화면으로 이동합니다.</p>
+            </div>
+            <div class="modal-footer">
+              <div class="btn-wrap center">
+                <button type="button" class="btn sm primary btn-modal-ok" onclick="location.href='./WP-PM0101.html'">
+                  <span>결제하기</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // .modal-wrap -->
+
+      <!-- // #modalPortal 안에 모달 소스 위치 -->
+    </div>
+
+    <!-- Script -->
+    <script src="../../js/pub_index.js"></script>
+    <script>
+      modalComponent.onOpenModal('servicePrepaid');
+    </script>
+    <!-- // Script -->
+  </body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>과금 및 결제 관리 &gt; 결제 내역</title>
+    <link rel="stylesheet" href="../../css/wp.common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css" />
+    <script src="../../js/font.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+  </head>
+  <body>
+    <div class="wp-wrap" id="wrap">
+      <!-- Header -->
+      <div class="header-wrap" id="header">
+        <header>
+          <div class="info-bg-wrap">
+            <div class="info-wrap">
+              <h1>HAND SIGN TALK TALK</h1>
+              <div class="service-info">
+                <span>서비스 기간 : 20XX년 X월 X일 ~ 20XX년 X월 X일(기간 만료 <strong>00</strong>일 전)</span>
+              </div>
+              <div class="login-info">
+                <!-- 팝업 활성화 시 .login-info에 .active 클래스 추가 -->
+                <!-- 팝업 활성화 시 aria-label 열기/닫기 -->
+                <!-- 팝업 활성화 시 aria-expanded true/false -->
+                <button
+                  type="button"
+                  class="login-name"
+                  aria-label="계정정보 팝업 {열기}"
+                  aria-controls="loginPopup"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <strong>케이엘큐브님</strong>
+                </button>
+                <div class="login-popup" id="loginPopup" role="listbox" tabindex="-1">
+                  <div class="login-account">
+                    <span class="account-photo">
+                      <span class="default"></span>
+                      <!-- <img src="" alt="" /> -->
+                    </span>
+                    <div class="account-name">
+                      <span class="role">최고관리자</span>
+                      <span class="name"><strong>케이엘큐브</strong>님</span>
+                    </div>
+                  </div>
+                  <div class="login-option">
+                    <button type="button" class="btn secondary btn-account">
+                      <span>계정정보</span>
+                    </button>
+                    <button type="button" class="btn primary btn-login">
+                      <span>로그아웃</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // .info-wrap-wrap -->
+          <nav class="gnb-wrap">
+            <h2 class="sr-only">메인 메뉴</h2>
+            <ul class="gnb-list">
+              <li class="active">
+                <button type="button">
+                  <span>과금/결제 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>콘텐츠 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통역 콜 이력 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>고객센터</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통계</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>관리자 관리</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <!-- // .gnb-wrap -->
+        </header>
+      </div>
+      <!-- // Header -->
+
+      <div class="content-outer-wrap" id="content">
+        <!-- lnb -->
+        <div class="lnb-wrap" id="lnbWrap">
+          <!-- {대메뉴}에 현재 선택된 탭의 명칭을 추가해 주세요. -->
+          <ul class="lnb-list" aria-label="{과금/결제 관리} 서브 메뉴">
+            <li>
+              <button type="button">
+                <span>이용 요금 결제</span>
+              </button>
+            </li>
+            <li class="active">
+              <button type="button">
+                <span>결제내역</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>결제 수단 관리</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>서비스 해지</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="content-inner-wrap">
+          <div class="breadcrumb" aria-label="사이트 이동 경로">
+            <ol>
+              <li>
+                <a href="#">HOME</a>
+              </li>
+              <li>
+                <a href="#">과금/결제 관리</a>
+              </li>
+              <li>
+                <span aria-current="page">결제 내역</span>
+              </li>
+            </ol>
+          </div>
+          <div class="content-wrap menu-payment-wrap">
+            <div class="content-header">
+              <h3 class="main-title">결제 내역</h3>
+            </div>
+            <div class="content-body">
+              <section class="section">
+                <h4 class="sr-only">결제 내역 검색</h4>
+                <div class="search-wrap">
+                  <form action="">
+                    <div class="table-wrap">
+                      <table class="table horizontal">
+                        <colgroup>
+                          <col class="colWidth190" />
+                          <col class="colWidthAuto" />
+                        </colgroup>
+                        <caption>
+                          검색어, 결제일, 결제 수단, 서비스 상품 조건을 통한 결제 내역 검색.
+                        </caption>
+                        <tbody>
+                          <tr>
+                            <th scope="row">검색어</th>
+                            <td>
+                              <div class="search-keyword-wrap">
+                                <div class="input-wrap">
+                                  <label for="searchKeword2" class="sr-only">
+                                    <span>검색어를 입력해 주세요.</span>
+                                  </label>
+                                  <div class="input">
+                                    <input type="text" id="searchKeword2" placeholder="검색어를 입력해 주세요." />
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">결제일</th>
+                            <td>
+                              <div class="search-date-wrap">
+                                <div class="search-date">
+                                  <div class="datepicker-wrap">
+                                    <input type="text" class="btn-datepicker" aria-label="결제일 검색 기간 시작일 선택" />
+                                  </div>
+                                  <div class="datepicker-wrap">
+                                    <input type="text" class="btn-datepicker" aria-label="결제일 검색 기간 종료일 선택" />
+                                  </div>
+                                </div>
+                                <div class="radio-group radio-btns" aria-label="자동 입력 날짜 선택">
+                                  <div class="radio-wrap button">
+                                    <input type="radio" id="searchDate01" name="searchArange" />
+                                    <label for="searchDate01">
+                                      <span>오늘</span>
+                                    </label>
+                                  </div>
+                                  <div class="radio-wrap button">
+                                    <input type="radio" id="searchDate02" name="searchArange" />
+                                    <label for="searchDate02">
+                                      <span>15일</span>
+                                    </label>
+                                  </div>
+                                  <div class="radio-wrap button">
+                                    <input type="radio" id="searchDate03" name="searchArange" />
+                                    <label for="searchDate03">
+                                      <span>1개월</span>
+                                    </label>
+                                  </div>
+                                  <div class="radio-wrap button">
+                                    <input type="radio" id="searchDate04" name="searchArange" />
+                                    <label for="searchDate04">
+                                      <span>3개월</span>
+                                    </label>
+                                  </div>
+                                  <div class="radio-wrap button">
+                                    <input type="radio" id="searchDate05" name="searchArange" />
+                                    <label for="searchDate05">
+                                      <span>전체</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">결제 수단</th>
+                            <td>
+                              <div class="select-wrap w220">
+                                <button class="selected" aria-label="결제 수단 선택">전체</button>
+                                <ul class="select-list">
+                                  <li class="option">
+                                    <span>전체</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>신용카드</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>계좌이체</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>무통장입금</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>가상계좌</span>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">서비스 상품</th>
+                            <td>
+                              <div class="select-wrap w220">
+                                <button class="selected" aria-label="서비스 상품 선택">전체</button>
+                                <ul class="select-list">
+                                  <li class="option">
+                                    <span>전체</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>핸드사인톡톡 APP형</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>홈페이지 API 연동형</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>통합형(APP+API)</span>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="btn-wrap center search-btn-wrap">
+                      <button type="button" class="btn secondary btn-init">
+                        <span>초기화</span>
+                      </button>
+                      <button type="button" class="btn primary btn-search">
+                        <span>검색</span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </section>
+              <!-- // .section -->
+              <section class="section">
+                <h4 class="sr-only">관리자 정보 검색 결과</h4>
+                <div class="search-result-wrap">
+                  <div class="result-view-options">
+                    <span class="result-count">
+                      <span aria-label="검색 결과 수">검색 <strong>10</strong>개</span>
+                      <!-- 검색 조건에 따라 { } 안의 내용을 변경해 주세요. -->
+                      <span aria-label="{전체 관리자} 수">총 <strong>10</strong>개</span>
+                    </span>
+                    <form action="">
+                      <fieldset>
+                        <legend>페이지 노출 게시글 갯수</legend>
+                        <div class="select-wrap">
+                          <button class="selected">10개</button>
+                          <ul class="select-list">
+                            <li class="option">
+                              <span>10개</span>
+                            </li>
+                            <li class="option">
+                              <span>20개</span>
+                            </li>
+                            <li class="option">
+                              <span>50개</span>
+                            </li>
+                            <li class="option">
+                              <span>100개</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </fieldset>
+                    </form>
+                  </div>
+                  <!-- // .result-view-options -->
+                  <div class="table-wrap">
+                    <table class="table vertical">
+                      <colgroup>
+                        <col class="colWidthPaymentList01" />
+                        <col class="colWidthPaymentList02" />
+                        <col class="colWidthPaymentList03" />
+                        <col class="colWidthPaymentList04" />
+                        <col class="colWidthPaymentList05" />
+                        <col class="colWidthPaymentList06" />
+                        <col class="colWidthPaymentList07" />
+                      </colgroup>
+                      <caption>
+                        결제 내역 검색 결과 목록. 목록 번호, 서비스 상품, 서비스 기간 및 문장 수, 결제 수단, 결제일, 결제 금액, 현재 결제
+                        상태로 구성.
+                      </caption>
+                      <thead>
+                        <tr>
+                          <th scope="col">번호</th>
+                          <th scope="col">서비스 상품</th>
+                          <th scope="col">서비스 기간/문장 수</th>
+                          <th scope="col">결제 수단</th>
+                          <th scope="col">결제일</th>
+                          <th scope="col">결제 금액</th>
+                          <th scope="col">상태</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>10</td>
+                          <td>핸드사인톡톡 APP형</td>
+                          <td>1개월/</td>
+                          <td>계좌이체</td>
+                          <td>YYYY.MM.DD HH:MM</td>
+                          <td>100,000원</td>
+                          <td>
+                            <span class="payment-state">입금대기</span>
+                            <div class="btn-wrap center">
+                              <button type="button" class="btn extra-sm secondary" onclick="toastComponent.onOpenToast('toast01')">
+                                <span>입금확인 요청</span>
+                              </button>
+                            </div>
+                            <div class="toast-wrap toast-payment-state" id="toast01">
+                              <div class="toast">
+                                <p>입금 완료 후 확인 요청하시면<br />운영 관리자가 빠르게 확인할 수 있습니다.</p>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- 검색된 정보가 없는 경우 -->
+                        <!-- <tr>
+                          <td colspan="7">
+                            <p class="no-data">검색된 정보가 없습니다.</p>
+                          </td>
+                        </tr> -->
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- // .table-wrap -->
+                  <div class="result-process-options">
+                    <div class="btn-wrap side">
+                      <button type="button" class="btn extra-sm primary btn-payment-history">
+                        <span>수어 문장 수 결제내역 보기</span>
+                      </button>
+                      <button type="button" class="btn extra-sm secondary btn-payment-method btn-side-right">
+                        <span>결제 수단 변경하기</span>
+                      </button>
+                      <button type="button" class="btn extra-sm btn-download">
+                        <span>엑셀 다운로드</span>
+                      </button>
+                    </div>
+                    <form action="">
+                      <div class="common-pagination-wrap">
+                        <button type="button" class="btn-page btn-first" disabled>
+                          <span class="sr-only">처음 목록으로 이동</span>
+                        </button>
+                        <button type="button" class="btn-page btn-prev" disabled>
+                          <span class="sr-only">이전 목록으로 이동</span>
+                        </button>
+                        <ol>
+                          <li>
+                            <button type="button" class="btn-page-num active" aria-label="목록 이동">
+                              <span>1</span>
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-page-num" aria-label="목록 이동">
+                              <span>2</span>
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-page-num" aria-label="목록 이동">
+                              <span>3</span>
+                            </button>
+                          </li>
+                        </ol>
+                        <button type="button" class="btn-page btn-next">
+                          <span class="sr-only">다음 목록으로 이동</span>
+                        </button>
+                        <button type="button" class="btn-page btn-last">
+                          <span class="sr-only">끝 목록으로 이동</span>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- // .result-process-options -->
+                </div>
+              </section>
+              <!-- // .section -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // .wp-body -->
+
+      <div class="footer-wrap" id="footer">
+        <footer>Copyright ⓒ HAND SIGN TALK TALK. All Rights Reserved.</footer>
+      </div>
+    </div>
+    <!-- // .wp-wrap -->
+
+    <!-- Script -->
+    <script src="../../js/pub_index.js"></script>
+    <!-- // Script -->
+  </body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HOME</title>
+    <link rel="stylesheet" href="../../css/wp.common.css" />
+    <script src="../../js/font.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+  </head>
+
+  <body>
+    <div class="wp-wrap no-lnb" id="wrap">
+      <!-- Header -->
+      <div class="header-wrap" id="header">
+        <header>
+          <div class="info-bg-wrap">
+            <div class="info-wrap">
+              <h1>HAND SIGN TALK TALK</h1>
+              <div class="service-info">
+                <span>서비스 기간 : 20XX년 X월 X일 ~ 20XX년 X월 X일(기간 만료 <strong>00</strong>일 전)</span>
+              </div>
+              <div class="login-info active">
+                <!-- 팝업 활성화 시 .login-info에 .active 클래스 추가 -->
+                <!-- 팝업 활성화 시 aria-label 열기/닫기 -->
+                <!-- 팝업 활성화 시 aria-expanded true/false -->
+                <button
+                  type="button"
+                  class="login-name"
+                  aria-label="계정정보 팝업 {열기}"
+                  aria-controls="loginPopup"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <strong>케이엘큐브님</strong>
+                </button>
+                <div class="login-popup" id="loginPopup" role="listbox" tabindex="-1">
+                  <div class="login-account">
+                    <span class="account-photo"></span>
+                    <div class="account-name">
+                      <span class="role">최고관리자</span>
+                      <span class="name"><strong>케이엘큐브</strong>님</span>
+                    </div>
+                  </div>
+                  <div class="login-option">
+                    <button type="button" class="btn secondary btn-account">
+                      <span>계정정보</span>
+                    </button>
+                    <button type="button" class="btn primary btn-login">
+                      <span>로그아웃</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // .info-wrap-wrap -->
+          <nav class="gnb-wrap">
+            <h2 class="sr-only">메인 메뉴</h2>
+            <ul class="gnb-list">
+              <li>
+                <button type="button">
+                  <span>과금/결제 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>콘텐츠 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통역 콜 이력 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>고객센터</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통계</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>관리자 관리</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <!-- // .gnb-wrap -->
+        </header>
+      </div>
+      <!-- // Header -->
+
+      <div class="content-outer-wrap" id="content">
+        <div class="content-inner-wrap">
+          <div class="content-wrap menu-home-wrap">
+            <div class="home-body">
+              <ul class="home-body-box">
+                <li>
+                  <div class="home-head">
+                    <h3 class="home-title">공지사항</h3>
+                    <a href="javascript:;" class="btn-detail" target="_blank" role="button" title="화면 이동">상세보기</a>
+                  </div>
+                  <div class="home-content notice-table">
+                    <!-- 등록된 게시글이 있는 경우 -->
+                    <ul>
+                      <li>
+                        <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                          <span>[내용] 공지사항 내용입니다.<em class="new">N</em></span>
+                        </a>
+                        <span class="date-info">2023.09.07</span>
+                      </li>
+                      <li>
+                        <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                          <span>[내용] 공지사항 내용입니다.</span>
+                        </a>
+                        <span class="date-info">2023.09.07</span>
+                      </li>
+                      <li>
+                        <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                          <span>[내용] 공지사항 내용입니다.</span>
+                        </a>
+                        <span class="date-info">2023.09.07</span>
+                      </li>
+                      <li>
+                        <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                          <span>[내용] 공지사항 내용입니다.</span>
+                        </a>
+                        <span class="date-info">2023.09.07</span>
+                      </li>
+                      <li>
+                        <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                          <span>[내용] 공지사항 내용입니다.</span>
+                        </a>
+                        <span class="date-info">2023.09.07</span>
+                      </li>
+                    </ul>
+                    <!-- 등록된 게시글이 없는 경우 -->
+                    <!-- <div class="no-post">등록된 게시글이 없습니다.</div> -->
+                  </div>
+                </li>
+                <li>
+                  <div class="home-head">
+                    <h3 class="home-title">1:1 문의</h3>
+                    <a href="javascript:;" class="btn-detail" target="_blank" role="button" title="화면 이동">상세보기</a>
+                  </div>
+                  <div class="home-content home-table">
+                    <!-- 등록된 게시글이 있는 경우 -->
+                    <div class="table-wrap">
+                      <table class="table">
+                        <caption>
+                          1:1문의. 제목, 작성일, 답변상태, 작성자로 구성
+                        </caption>
+                        <colgroup>
+                          <col class="colWidthHome40" />
+                          <col class="colWidthHome20" />
+                          <col class="colWidthHome20" />
+                          <col class="colWidthHome20" />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="col">제목</th>
+                            <th scope="col">작성일</th>
+                            <th scope="col">답변상태</th>
+                            <th scope="col">작성자</th>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                                <span>결제문의 드립니다. 결제문의 드립니다.</span>
+                              </a>
+                            </td>
+                            <td>2023.09.08</td>
+                            <td>접수</td>
+                            <td>케이엘큐브</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                                <span>결제문의 드립니다. 결제문의 드립니다.</span>
+                              </a>
+                            </td>
+                            <td>2023.09.08</td>
+                            <td>접수</td>
+                            <td>케이엘큐브</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                                <span>결제문의 드립니다. 결제문의 드립니다.</span>
+                              </a>
+                            </td>
+                            <td>2023.09.08</td>
+                            <td>접수</td>
+                            <td>케이엘큐브</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                                <span>결제문의 드립니다. 결제문의 드립니다.</span>
+                              </a>
+                            </td>
+                            <td>2023.09.08</td>
+                            <td>접수</td>
+                            <td>케이엘큐브</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                                <span>결제문의 드립니다. 결제문의 드립니다.</span>
+                              </a>
+                            </td>
+                            <td>2023.09.08</td>
+                            <td>접수</td>
+                            <td>케이엘큐브</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="btn-wrap right">
+                      <button type="button" class="btn extra-sm secondary btn-inquiry">
+                        <span>문의하기</span>
+                      </button>
+                    </div>
+                    <!--/ 등록된 게시글이 있는 경우 -->
+
+                    <!-- 등록된 게시글이 없는 경우 -->
+                    <!-- <div class="no-post">등록된 게시글이 없습니다.</div> -->
+                    <!--/ 등록된 게시글이 없는 경우 -->
+                  </div>
+                </li>
+                <li>
+                  <div class="home-head">
+                    <h3 class="home-title">통계</h3>
+                    <a href="javascript:;" class="btn-detail" target="_blank" role="button" title="화면 이동">상세보기</a>
+                  </div>
+                  <div class="home-content stats-wrap">
+                    <!-- 등록된 게시글이 있는 경우 -->
+                    <div class="stats-img">
+                      <strong>6.22 목</strong>
+                    </div>
+                    <div class="stats-table">
+                      <div class="table-wrap">
+                        <table class="table">
+                          <caption>
+                            통계. 콘텐츠 메뉴명, 페이지 뷰로 구성
+                          </caption>
+                          <colgroup>
+                            <col class="colWidthHome60" />
+                            <col class="colWidthHome40" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th scope="col">콘텐츠 메뉴명</th>
+                              <th scope="col">페이지뷰</th>
+                            </tr>
+                            <tr>
+                              <td><p class="stats-tit">합계</p></td>
+                              <td><span class="view-count">100</span></td>
+                            </tr>
+                            <tr>
+                              <td><p class="stats-tit">진료예약 안내</p></td>
+                              <td><span class="view-count">20</span></td>
+                            </tr>
+                            <tr>
+                              <td><p class="stats-tit">진료 안내</p></td>
+                              <td><span class="view-count">10</span></td>
+                            </tr>
+                            <tr>
+                              <td><p class="stats-tit">입/퇴원 안내</p></td>
+                              <td><span class="view-count">0</span></td>
+                            </tr>
+                            <tr>
+                              <td><p class="stats-tit">검진 안내</p></td>
+                              <td><span class="view-count">10</span></td>
+                            </tr>
+                            <tr>
+                              <td><p class="stats-tit">오시는길 안내</p></td>
+                              <td><span class="view-count">50</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- 등록된 게시글이 없는 경우 -->
+                    <!-- <div class="no-post">등록된 게시글이 없습니다.</div> -->
+                  </div>
+                </li>
+                <li>
+                  <div class="home-head">
+                    <h3 class="home-title">서비스 콘텐츠 관리</h3>
+                    <a href="javascript:;" class="btn-detail" target="_blank" role="button" title="화면 이동">상세보기</a>
+                  </div>
+                  <div class="home-content home-table">
+                    <!-- 등록된 게시글이 있는 경우 -->
+                    <div class="table-wrap">
+                      <table class="table">
+                        <caption>
+                          서비스 콘텐츠 관리. 서비스 분야,서비스 상품, 신청일, 상태, 작성자로 구성
+                        </caption>
+                        <colgroup>
+                          <col class="colWidthHome20" />
+                          <col class="colWidthHome25" />
+                          <col class="colWidthHome25" />
+                          <col class="colWidthHome10" />
+                          <col class="colWidthHome20" />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="col">서비스 분야</th>
+                            <th scope="col">서비스 상품</th>
+                            <th scope="col">신청일</th>
+                            <th scope="col">상태</th>
+                            <th scope="col">작성자</th>
+                          </tr>
+                          <tr>
+                            <td>병원 &gt; 1차병원</td>
+                            <td>
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                                <span>핸드사인 톡톡 APP형</span>
+                              </a>
+                            </td>
+                            <td>2023.09.08 10:00</td>
+                            <td>요청</td>
+                            <td>케이엘큐브</td>
+                          </tr>
+                          <tr>
+                            <td>병원 &gt; 1차병원</td>
+                            <td>
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                                <span>핸드사인 톡톡 APP형</span>
+                              </a>
+                            </td>
+                            <td>2023.09.08 10:00</td>
+                            <td>요청</td>
+                            <td>케이엘큐브</td>
+                          </tr>
+                          <tr>
+                            <td>병원 &gt; 1차병원</td>
+                            <td>
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                                <span>핸드사인 톡톡 APP형</span>
+                              </a>
+                            </td>
+                            <td>2023.09.08 10:00</td>
+                            <td>요청</td>
+                            <td>케이엘큐브</td>
+                          </tr>
+                          <tr>
+                            <td>병원 &gt; 1차병원</td>
+                            <td>
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                                <span>핸드사인 톡톡 APP형</span>
+                              </a>
+                            </td>
+                            <td>2023.09.08 10:00</td>
+                            <td>요청</td>
+                            <td>케이엘큐브</td>
+                          </tr>
+                          <tr>
+                            <td>병원 &gt; 1차병원</td>
+                            <td>
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link">
+                                <span>핸드사인 톡톡 APP형</span>
+                              </a>
+                            </td>
+                            <td>2023.09.08 10:00</td>
+                            <td>요청</td>
+                            <td>케이엘큐브</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="btn-wrap right">
+                      <button type="button" class="btn extra-sm secondary btn-service-apply">
+                        <span>서비스 콘텐츠 신청하기</span>
+                      </button>
+                    </div>
+                    <!--/ 등록된 게시글이 있는 경우 -->
+
+                    <!-- 등록된 게시글이 없는 경우 -->
+                    <!-- <div class="no-post">등록된 게시글이 없습니다.</div> -->
+                    <!--/ 등록된 게시글이 없는 경우 -->
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // .wp-body -->
+
+      <div class="footer-wrap" id="footer">
+        <footer>Copyright ⓒ HAND SIGN TALK TALK. All Rights Reserved.</footer>
+      </div>
+    </div>
+    <!-- // .wp-wrap -->
+
+    <!-- Script -->
+    <script src="../../js/pub_index.js"></script>
+    <!-- // Script -->
+  </body>
+</html>

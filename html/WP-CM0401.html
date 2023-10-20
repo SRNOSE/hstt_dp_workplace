@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>콘텐츠 관리 &gt; 서비스 콘텐츠 관리 &gt; 통합형(App+API) 서비스 콘텐츠 등록</title>
+    <link rel="stylesheet" href="../../css/wp.common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css" />
+    <script src="../../js/font.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+  </head>
+  <body>
+    <div class="wp-wrap" id="wrap">
+      <!-- Header -->
+      <div class="header-wrap" id="header">
+        <header>
+          <div class="info-bg-wrap">
+            <div class="info-wrap">
+              <h1>HAND SIGN TALK TALK</h1>
+              <div class="service-info">
+                <span>서비스 기간 : 20XX년 X월 X일 ~ 20XX년 X월 X일(기간 만료 <strong>00</strong>일 전)</span>
+              </div>
+              <div class="login-info">
+                <!-- 팝업 활성화 시 .login-info에 .active 클래스 추가 -->
+                <!-- 팝업 활성화 시 aria-label 열기/닫기 -->
+                <!-- 팝업 활성화 시 aria-expanded true/false -->
+                <button
+                  type="button"
+                  class="login-name"
+                  aria-label="계정정보 팝업 {열기}"
+                  aria-controls="loginPopup"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <strong>케이엘큐브님</strong>
+                </button>
+                <div class="login-popup" id="loginPopup" role="listbox" tabindex="-1">
+                  <div class="login-account">
+                    <span class="account-photo"></span>
+                    <div class="account-name">
+                      <span class="role">최고관리자</span>
+                      <span class="name"><strong>케이엘큐브</strong>님</span>
+                    </div>
+                  </div>
+                  <div class="login-option">
+                    <button type="button" class="btn secondary btn-account">
+                      <span>계정정보</span>
+                    </button>
+                    <button type="button" class="btn primary btn-login">
+                      <span>로그아웃</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // .info-wrap-wrap -->
+          <nav class="gnb-wrap">
+            <h2 class="sr-only">메인 메뉴</h2>
+            <ul class="gnb-list">
+              <li>
+                <button type="button">
+                  <span>과금/결제 관리</span>
+                </button>
+              </li>
+              <li class="active">
+                <button type="button">
+                  <span>콘텐츠 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통역 콜 이력 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>고객센터</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통계</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>관리자 관리</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <!-- // .gnb-wrap -->
+        </header>
+      </div>
+      <!-- // Header -->
+
+      <div class="content-outer-wrap" id="content">
+        <!-- lnb -->
+        <div class="lnb-wrap" id="lnbWrap">
+          <!-- {대메뉴}에 현재 선택된 탭의 명칭을 추가해 주세요. -->
+          <h2 class="sr-only">{대메뉴} 서브 메뉴</h2>
+          <ul class="lnb-list" role="navigation">
+            <li class="active">
+              <button type="button">
+                <span>서비스 콘텐츠 관리</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="content-inner-wrap">
+          <div class="breadcrumb" aria-label="사이트 이동 경로">
+            <ol>
+              <li>
+                <a href="#">HOME</a>
+              </li>
+              <li>
+                <a href="#">콘텐츠 관리</a>
+              </li>
+              <li>
+                <span aria-current="page">서비스 콘텐츠 관리</span>
+              </li>
+            </ol>
+          </div>
+          <div class="content-wrap menu-contents-wrap">
+            <div class="content-header line-bottom">
+              <h3 class="main-title">서비스 콘텐츠 관리</h3>
+            </div>
+            <div class="content-body">
+              <div class="tab-wrap">
+                <div class="tab-list">
+                  <button type="button" class="tab">핸드사인톡톡 APP</button>
+                  <button type="button" class="tab">홈페이지 API 연동</button>
+                </div>
+                <div class="tab-panels">
+                  <div class="tab-panel">
+                    <section class="section">
+                      <h4 class="sr-only">APP형 서비스 콘텐츠 &gt; 신청한 서비스 분야 내용</h4>
+                      <div class="table-title">
+                        <h4 class="sub-title">관리자 정보</h4>
+                      </div>
+                      <div class="table-wrap">
+                        <table class="table horizontal">
+                          <colgroup>
+                            <col class="colWidth210" />
+                            <col class="colWidthAuto" />
+                          </colgroup>
+                          <caption>
+                            서비스 분야 정보 영역. 서비스 분야, 서비스 지역, 서비스 상품, 서비스 요청 상태로 구성.
+                          </caption>
+                          <tbody>
+                            <tr>
+                              <th scope="row">서비스 분야</th>
+                              <td>
+                                <!-- 
+                                  데이터를 한 번에 불러온다면 <span></span>을 사용해 주세요.
+                                  <span>병원 &gt; 3차 병원</span>
+                                -->
+                                <span class="apply-service">
+                                  <span>병원</span>
+                                  <span>3차 병원</span>
+                                </span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">서비스 지역</th>
+                              <td>
+                                <!-- 
+                                  데이터를 한 번에 불러온다면 <span></span>을 사용해 주세요.
+                                  <span>서울특별시 &gt; 강남구</span>
+                                -->
+                                <span class="apply-service">
+                                  <span>서울특별시</span>
+                                  <span>강남구</span>
+                                </span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">서비스 상품</th>
+                              <td>핸드사인톡톡 APP형</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">상태</th>
+                              <td>
+                                <div class="step-list">
+                                  <!-- 활성화 상태에 aria-current와 title 추가 -->
+                                  <div class="step">
+                                    <span>서비스 요청</span>
+                                  </div>
+                                  <div class="step" aria-current="step" title="현재 서비스 상태">
+                                    <span>검토 중</span>
+                                  </div>
+                                  <div class="step">
+                                    <span>서비스 적용</span>
+                                  </div>
+                                </div>
+                                <div class="step-list">
+                                  <!-- 활성화 상태에 aria-current와 title 추가 -->
+                                  <div class="step" aria-current="step" title="현재 서비스 상태">
+                                    <span>수정 요청</span>
+                                  </div>
+                                  <div class="step">
+                                    <span>검토 중</span>
+                                  </div>
+                                  <div class="step">
+                                    <span>서비스 적용</span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                    <!-- // .section -->
+                    <section class="section">
+                      <h4 class="sr-only">APP형 서비스 콘텐츠 &gt; 서비스 메뉴 등록</h4>
+                      <div class="table-title">
+                        <h4 class="sub-title">서비스 메뉴</h4>
+                      </div>
+                      <form action="">
+                        <div class="table-wrap">
+                          <!-- table 작업 시,
+                            <th> 안에 있는 label의 for와
+                            <td> 안에 있는 input의 id를 연결해 주세요.
+              
+                            error, success 메시지가 있을 경우,
+                            input의 aria-describedby과
+                            메시지의 id를 연결해 주세요.
+                          -->
+                          <table class="table horizontal">
+                            <colgroup>
+                              <col class="colWidth210" />
+                              <col class="colWidthAuto" />
+                            </colgroup>
+                            <caption>
+                              진료예약 안내 노출 여부, 내용, 예시화면 보기 팝업, 진료 안내 노출 여부, 내용, 예시화면 보기 팝업, 입/퇴원 안내
+                              노출 여부, 내용, 예시화면 보기 팝업, 검진 안내 노출 여부, 내용, 예시화면 보기 팝업, 오시는 길 안내 노출 여부,
+                              주소, 지도로 구성.
+                            </caption>
+                            <tbody>
+                              <tr>
+                                <th scope="row" class="txt-top">
+                                  <span id="guideTreatBooking">진료예약 안내</span>
+                                </th>
+                                <td>
+                                  <div class="guide-contents-register">
+                                    <div class="radio-group radio-side-btns" aria-label="진료예약 안내 노출 여부 선택">
+                                      <div class="radio-wrap circle">
+                                        <input type="radio" id="guideTreatBooking01" name="guideTreatBooking" checked />
+                                        <label for="guideTreatBooking01">
+                                          <span>사용함</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap circle">
+                                        <input type="radio" id="guideTreatBooking02" name="guideTreatBooking" />
+                                        <label for="guideTreatBooking02">
+                                          <span>사용 안함</span>
+                                        </label>
+                                      </div>
+                                    </div>
+                                    <!-- // .radio-group  -->
+                                    <div class="textarea-wrap" aria-labelledby="guideTreatBooking">
+                                      <label for="guideTreatBookingTitle" class="sr-only">
+                                        <span>진료예약 안내 내용을 입력해 주세요.</span>
+                                      </label>
+                                      <textarea
+                                        id="guideTreatBookingTitle"
+                                        aria-describedby="msgGuideTreatBooking"
+                                        placeholder="진료예약 안내 내용을 입력해 주세요."
+                                      ></textarea>
+                                      <p class="message" id="msgGuideTreatBooking">진료예약 안내 내용을 입력해 주세요.</p>
+                                    </div>
+                                    <!-- // .textarea-wrap  -->
+                                    <div class="btn-wrap active">
+                                      <button type="button" class="btn extra-sm secondary" title="팝업 열림">
+                                        <span>콘텐츠 등록 예시화면</span>
+                                      </button>
+                                    </div>
+                                    <!-- // .btn-wrap  -->
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row" class="txt-top">
+                                  <span id="guideTreat">진료 안내</span>
+                                </th>
+                                <td>
+                                  <div class="guide-contents-register">
+                                    <div class="radio-group radio-side-btns" aria-label="진료 안내 노출 여부 선택">
+                                      <div class="radio-wrap circle">
+                                        <input type="radio" id="guideTreat01" name="guideTreat" checked />
+                                        <label for="guideTreat01">
+                                          <span>사용함</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap circle">
+                                        <input type="radio" id="guideTreat02" name="guideTreat" />
+                                        <label for="guideTreat02">
+                                          <span>사용 안함</span>
+                                        </label>
+                                      </div>
+                                    </div>
+                                    <!-- // .radio-group  -->
+                                    <div class="textarea-wrap" aria-labelledby="guideTreat">
+                                      <label for="guideTreatTitle" class="sr-only">
+                                        <span>진료 안내 내용을 입력해 주세요.</span>
+                                      </label>
+                                      <textarea
+                                        id="guideTreatTitle"
+                                        aria-describedby="msgGuideTreat"
+                                        placeholder="진료 안내 내용을 입력해 주세요."
+                                      ></textarea>
+                                      <p class="message" id="msgGuideTreat">진료 안내 내용을 입력해 주세요.</p>
+                                    </div>
+                                    <!-- // .textarea-wrap  -->
+                                    <div class="btn-wrap active">
+                                      <button type="button" class="btn extra-sm secondary" title="팝업 열림">
+                                        <span>콘텐츠 등록 예시화면</span>
+                                      </button>
+                                    </div>
+                                    <!-- // .btn-wrap  -->
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row" class="txt-top">
+                                  <span id="guideInOut">입/퇴원 안내</span>
+                                </th>
+                                <td>
+                                  <div class="guide-contents-register">
+                                    <div class="radio-group radio-side-btns" aria-label="입/퇴원 안내 노출 여부 선택">
+                                      <div class="radio-wrap circle">
+                                        <input type="radio" id="guideInOut01" name="guideInOut" checked />
+                                        <label for="guideInOut01">
+                                          <span>사용함</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap circle">
+                                        <input type="radio" id="guideInOut02" name="guideInOut" />
+                                        <label for="guideInOut02">
+                                          <span>사용 안함</span>
+                                        </label>
+                                      </div>
+                                    </div>
+                                    <!-- // .radio-group  -->
+                                    <div class="textarea-wrap" aria-labelledby="guideInOut">
+                                      <label for="guideInOutTitle" class="sr-only">
+                                        <span>입/퇴원 안내 내용을 입력해 주세요.</span>
+                                      </label>
+                                      <textarea
+                                        id="guideInOutTitle"
+                                        aria-describedby="msgGuideInOut"
+                                        placeholder="입/퇴원 안내 내용을 입력해 주세요."
+                                      ></textarea>
+                                      <p class="message" id="msgGuideInOut">입/퇴원 안내 내용을 입력해 주세요.</p>
+                                    </div>
+                                    <!-- // .textarea-wrap  -->
+                                    <div class="btn-wrap active">
+                                      <button type="button" class="btn extra-sm secondary" title="팝업 열림">
+                                        <span>콘텐츠 등록 예시화면</span>
+                                      </button>
+                                    </div>
+                                    <!-- // .btn-wrap  -->
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row" class="txt-top">
+                                  <span id="guideCheckup">검진 안내</span>
+                                </th>
+                                <td>
+                                  <div class="guide-contents-register">
+                                    <div class="radio-group radio-side-btns" aria-label="검진 안내 노출 여부 선택">
+                                      <div class="radio-wrap circle">
+                                        <input type="radio" id="guideCheckup01" name="guideCheckup" checked />
+                                        <label for="guideCheckup01">
+                                          <span>사용함</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap circle">
+                                        <input type="radio" id="guideCheckup02" name="guideCheckup" />
+                                        <label for="guideCheckup02">
+                                          <span>사용 안함</span>
+                                        </label>
+                                      </div>
+                                    </div>
+                                    <!-- // .radio-group  -->
+                                    <div class="textarea-wrap" aria-labelledby="guideCheckup">
+                                      <label for="guideCheckupTitle" class="sr-only">
+                                        <span>검진 안내 내용을 입력해 주세요.</span>
+                                      </label>
+                                      <textarea
+                                        id="guideCheckupTitle"
+                                        aria-describedby="msgGuideCheckup"
+                                        placeholder="검진 안내 내용을 입력해 주세요."
+                                      ></textarea>
+                                      <p class="message" id="msgGuideCheckup">검진 안내 내용을 입력해 주세요.</p>
+                                    </div>
+                                    <!-- // .textarea-wrap  -->
+                                    <div class="btn-wrap active">
+                                      <button type="button" class="btn extra-sm secondary" title="팝업 열림">
+                                        <span>콘텐츠 등록 예시화면</span>
+                                      </button>
+                                    </div>
+                                    <!-- // .btn-wrap  -->
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row" class="txt-top">
+                                  <span id="guideMap">오시는 길 안내</span>
+                                </th>
+                                <td>
+                                  <div class="guide-contents-register">
+                                    <div class="radio-group radio-side-btns" aria-label="오시는 길 안내 노출 여부 선택">
+                                      <div class="radio-wrap circle">
+                                        <input type="radio" id="guideMap01" name="guideMap" checked />
+                                        <label for="guideMap01">
+                                          <span>사용함</span>
+                                        </label>
+                                      </div>
+                                      <div class="radio-wrap circle">
+                                        <input type="radio" id="guideMap02" name="guideMap" />
+                                        <label for="guideMap02">
+                                          <span>사용 안함</span>
+                                        </label>
+                                      </div>
+                                    </div>
+                                    <!-- // .radio-group  -->
+                                    <div class="input-wrap address">
+                                      <div class="input">
+                                        <input
+                                          type="text"
+                                          id="address1"
+                                          aria-describedby="msgAddress"
+                                          placeholder="오시는 길 안내 내용을 입력해 주세요."
+                                          disabled
+                                        />
+                                        <button type="button" class="btn extra-sm secondary">
+                                          <span>주소 검색</span>
+                                        </button>
+                                      </div>
+                                      <p class="message" id="msgAddress">
+                                        ※ 첨부 서류는 5MB 이하의 파일(jpg, jpeg, gif, png, bmp, pdf)로 첨부하여 주시기 바랍니다.
+                                      </p>
+                                    </div>
+                                    <!-- // .input-wrap  -->
+                                    <div class="map-wrap">지도 API</div>
+                                    <!-- // .map-wrap  -->
+                                    <div class="btn-wrap active">
+                                      <button type="button" class="btn extra-sm secondary" title="팝업 열림">
+                                        <span>콘텐츠 등록 예시화면</span>
+                                      </button>
+                                    </div>
+                                    <!-- // .btn-wrap  -->
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="content-inner-footer">
+                          <div class="btn-wrap pos-header">
+                            <button type="button" class="btn extra-sm w150 secondary btn-register-contents">
+                              <span>서비스 요청</span>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </section>
+                    <!-- // .section -->
+                  </div>
+                  <div class="tab-panel">
+                    <section class="section">
+                      <h4 class="sr-only">APP형 서비스 콘텐츠 &gt; 신청한 서비스 분야 내용</h4>
+                      <div class="table-title">
+                        <h4 class="sub-title">관리자 정보</h4>
+                      </div>
+                      <div class="table-wrap">
+                        <table class="table horizontal">
+                          <colgroup>
+                            <col class="colWidth210" />
+                            <col class="colWidthAuto" />
+                          </colgroup>
+                          <caption>
+                            서비스 분야 정보 영역. 서비스 분야, 서비스 지역, 서비스 상품, 서비스 요청 상태로 구성.
+                          </caption>
+                          <tbody>
+                            <tr>
+                              <th scope="row">서비스 분야</th>
+                              <td>
+                                <!-- 
+                                  데이터를 한 번에 불러온다면 <span></span>을 사용해 주세요.
+                                  <span>병원 &gt; 3차 병원</span>
+                                -->
+                                <span class="apply-service">
+                                  <span>병원</span>
+                                  <span>3차 병원</span>
+                                </span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">서비스 지역</th>
+                              <td>
+                                <!-- 
+                                  데이터를 한 번에 불러온다면 <span></span>을 사용해 주세요.
+                                  <span>서울특별시 &gt; 강남구</span>
+                                -->
+                                <span class="apply-service">
+                                  <span>서울특별시</span>
+                                  <span>강남구</span>
+                                </span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">서비스 상품</th>
+                              <td>홈페이지 API 연동형</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">상태</th>
+                              <td>
+                                <div class="step-list">
+                                  <!-- 활성화 상태에 aria-current와 title 추가 -->
+                                  <div class="step">
+                                    <span>서비스 요청</span>
+                                  </div>
+                                  <div class="step" aria-current="step" title="현재 서비스 상태">
+                                    <span>검토 중</span>
+                                  </div>
+                                  <div class="step">
+                                    <span>서비스 적용</span>
+                                  </div>
+                                </div>
+                                <div class="step-list">
+                                  <!-- 활성화 상태에 aria-current와 title 추가 -->
+                                  <div class="step" aria-current="step" title="현재 서비스 상태">
+                                    <span>수정 요청</span>
+                                  </div>
+                                  <div class="step">
+                                    <span>검토 중</span>
+                                  </div>
+                                  <div class="step">
+                                    <span>서비스 적용</span>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                    <!-- // .section -->
+                    <section class="section">
+                      <h4 class="sub-title">서비스 콘텐츠</h4>
+                      <div class="api-process-wrap">
+                        <h5>콘텐츠 서비스 요청 절차</h5>
+                        <ol>
+                          <li>
+                            <span class="step">01</span>
+                            <strong>
+                              <span class="icon"></span>
+                              <span>홈페이지 내용</span>
+                              <span>복사하여 붙여넣기</span>
+                            </strong>
+                          </li>
+                          <li>
+                            <span class="step">02</span>
+                            <strong>
+                              <span class="icon"></span>
+                              <span>문장분할</span>
+                              <span>문장분할 버튼 클릭</span>
+                            </strong>
+                          </li>
+                          <li>
+                            <span class="step">03</span>
+                            <strong>
+                              <span class="icon"></span>
+                              <span>분할된 문장</span>
+                              <span>콘텐츠 수정</span>
+                            </strong>
+                          </li>
+                          <li>
+                            <span class="step">04</span>
+                            <strong>
+                              <span class="icon"></span>
+                              <span>수어 서비스 신청</span>
+                              <span>서비스 요청 버튼 클릭</span>
+                            </strong>
+                          </li>
+                        </ol>
+                      </div>
+                      <form action="">
+                        <fieldset>
+                          <legend>문장 분할 내용 입력</legend>
+                          <div class="sentence-segmentation-wrap">
+                            <div class="textarea-wrap">
+                              <label for="textarea01" class="sr-only">
+                                <span>홈페이지에 있는 내용을 복사하여 붙여넣기로 콘텐츠를 입력해 주세요.</span>
+                              </label>
+                              <textarea
+                                id="textarea01"
+                                placeholder="홈페이지에 있는 내용을 복사하여 붙여넣기로 콘텐츠를 입력해 주세요."
+                              ></textarea>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <div class="content-inner-footer">
+                          <div class="btn-wrap pos-header">
+                            <button type="button" class="btn extra-sm secondary btn-sentence-segmentation">
+                              <span>문장 분할</span>
+                            </button>
+                            <!-- 활성화 시
+                            <button type="button" class="btn extra-sm w150 secondary btn-register-contents">
+                              <span>서비스 요청</span>
+                            </button> -->
+                            <button type="button" class="btn extra-sm w150 tertiary btn-register-contents">
+                              <span>서비스 요청</span>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </section>
+                    <!-- // .section -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // .wp-body -->
+
+      <div class="footer-wrap" id="footer">
+        <footer>Copyright ⓒ HAND SIGN TALK TALK. All Rights Reserved.</footer>
+      </div>
+    </div>
+    <!-- // .wp-wrap -->
+
+    <!-- Script -->
+    <script src="../../js/pub_index.js"></script>
+    <!-- // Script -->
+  </body>
+</html>

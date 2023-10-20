@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>회원가입 &gt; 서비스 신청 &gt; 이용약관 상세보기</title>
+    <link rel="stylesheet" href="../../css/wp.common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css" />
+    <script src="../../js/font.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+  </head>
+  <body>
+    <div class="wp-wrap" id="wrap">
+      <!-- Header -->
+      <div class="header-wrap" id="header">
+        <header>
+          <div class="info-bg-wrap">
+            <div class="info-wrap">
+              <h1>HAND SIGN TALK TALK</h1>
+              <div class="service-info">
+                <span>서비스 기간 : 20XX년 X월 X일 ~ 20XX년 X월 X일(기간 만료 <strong>00</strong>일 전)</span>
+              </div>
+              <div class="login-info">
+                <!-- 팝업 활성화 시 .login-info에 .active 클래스 추가 -->
+                <!-- 팝업 활성화 시 aria-label 열기/닫기 -->
+                <!-- 팝업 활성화 시 aria-expanded true/false -->
+                <button
+                  type="button"
+                  class="login-name"
+                  aria-label="계정정보 팝업 {열기}"
+                  aria-controls="loginPopup"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <strong>케이엘큐브님</strong>
+                </button>
+                <div class="login-popup" id="loginPopup" role="listbox" tabindex="-1">
+                  <div class="login-account">
+                    <span class="account-photo"></span>
+                    <div class="account-name">
+                      <span class="role">최고관리자</span>
+                      <span class="name"><strong>케이엘큐브</strong>님</span>
+                    </div>
+                  </div>
+                  <div class="login-option">
+                    <button type="button" class="btn secondary btn-account">
+                      <span>계정정보</span>
+                    </button>
+                    <button type="button" class="btn primary btn-login">
+                      <span>로그아웃</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // .info-wrap-wrap -->
+          <nav class="gnb-wrap">
+            <h2 class="sr-only">메인 메뉴</h2>
+            <ul class="gnb-list">
+              <li class="active">
+                <button type="button">
+                  <span>과금/결제 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>콘텐츠 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통역 콜 이력 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>고객센터</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통계</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>관리자 관리</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <!-- // .gnb-wrap -->
+        </header>
+      </div>
+      <!-- // Header -->
+
+      <div class="content-outer-wrap" id="content">
+        <!-- lnb -->
+        <div class="lnb-wrap" id="lnbWrap">
+          <!-- {대메뉴}에 현재 선택된 탭의 명칭을 추가해 주세요. -->
+          <h2 class="sr-only">{대메뉴} 서브 메뉴</h2>
+          <ul class="lnb-list" role="navigation">
+            <li class="active">
+              <button type="button">
+                <span>이용 요금 결제</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>결제내역</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>결제 수단 관리</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>서비스 해지</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="content-inner-wrap">
+          <div class="breadcrumb" aria-label="사이트 이동 경로">
+            <ol>
+              <li>
+                <a href="#">HOME</a>
+              </li>
+              <li>
+                <a href="#">과금/결제 관리</a>
+              </li>
+              <li>
+                <span aria-current="page">이용 요금 결제</span>
+              </li>
+            </ol>
+          </div>
+          <div class="content-wrap">
+            <div class="content-header line-bottom">
+              <h3 class="main-title">이용 요금 결제</h3>
+            </div>
+            <div class="content-body">
+              <section class="section">
+                <h4 class="sub-title">수어 안내 서비스 상품</h4>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // .wp-body -->
+
+      <div class="footer-wrap" id="footer">
+        <footer>Copyright ⓒ HAND SIGN TALK TALK. All Rights Reserved.</footer>
+      </div>
+    </div>
+    <!-- // .wp-wrap -->
+    <div class="modal-portal" id="modalPortal">
+      <!-- Modal 시작 -->
+      <div class="modal-wrap contents-example-popup" id="contentsExample">
+        <div class="modal-dialog-wrap">
+          <div class="modal-dialog">
+            <div class="modal-header">
+              <h5>콘텐츠 등록 예시 화면</h5>
+            </div>
+            <div class="modal-content">
+              <div class="contents-example">
+                <p>외래진료안내</p>
+                <br />
+                <p>고려대학교 병원에서는 보다 편리하고 빠른 진료예약을 위해</p>
+                <p>온라인예약, 전화예약, FAX예약 서비스 모두를 제공해드리고 있습니다.</p>
+                <p>문의전화 1577-0083</p>
+                <br />
+                <p>외래진료 접수 및 진료시간표안내</p>
+                <p>구분 : 평일</p>
+                <p>접수시간 : 오전 08:30 ~ 오후 16:30</p>
+                <p>진료시간 : 오전 09:00 ~ 오후 17:30</p>
+                <br />
+                <p>1단계 : 진료예약안내</p>
+                <p>첫방문 간편예약</p>
+                <p>회원로그인 없이 진료예약이 가능합니다.</p>
+                <p>전문 상담원이 정확하고 간편하게 예약을 도와드립니다.</p>
+                <p>상담시간 : 평일 08:00 ~ 17:00 / 토요일 08:30 ~ 12:30</p>
+                <p>온라인 예약</p>
+                <p>고려대학교 안암병원 홈페이지 http:anam.kumc.or.kr</p>
+                <p>온라인예약 절차</p>
+                <p>전화예약</p>
+                <p>1577-0083(진료예약센터) 전화로 편리하게 예약하실 수 있습니다.</p>
+                <p>예약가능시간 : 평일 08:00 ~ 18:00 / 토요일 08:00 ~ 13:30</p>
+                <p>모바일 앱 예약</p>
+                <p>
+                  환자용 모바일 앱을 다운 받아 사용하시면 진료예약, 예약변경, 진료비결제, 검사결과조회 등 편리하게 이용하실 수 있습니다.
+                </p>
+                <p>모바일 앱은 고대안암병원 진료이력이 있으신 고객님에 한해서 사용 가능합니다.</p>
+                <p>첫방문 고객 환자분은 ‘간편예약’ 또는 ‘전화예약’ 을 이용 부탁드립니다.</p>
+                <p>진료협력센터 초진예약</p>
+                <p>1, 2차 의료기관에서 진료의뢰서를 받으신 초진환자분은 진료협력센터에서 진료예약이 가능합니다.</p>
+                <p>저희 병원 진료(외래, 응급실) 받으셨던 분은 진료예약센터(1577-0083)로 문의바랍니다.</p>
+                <p>전화번호 : 02-920-6513</p>
+                <p>상담시간 : 평일 08:30 ~ 17:30</p>
+                <br />
+                <p>2단계 : 접수절차안내</p>
+                <p>예약된 진료일자에 건강보험증과 진료의뢰서를 지참하여 수납창구에서 진료비 수납 후 해당 진료과에서 진료를 받습니다.</p>
+                <br />
+                <p>01 : 원무팀 진료비 수납창구</p>
+                <p>02 : 해당 외래 진료과 접수</p>
+                <p>03 : 진료</p>
+                <p>04 : 원무팀 진료비 수납창구</p>
+                <p>05 : 검사예약</p>
+                <p>06 : 귀가</p>
+                <br />
+                <p>3단계 : 진료수납방법</p>
+                <p>진료비 수납은 카드, 현금 모두 가능합니다.</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="btn-wrap center">
+                <button type="button" class="btn sm primary btn-modal-ok">
+                  <span>닫기</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- // .modal-dialog -->
+      </div>
+      <!-- // Modal 끝 -->
+    </div>
+
+    <!-- Script -->
+    <script src="../../js/pub_index.js"></script>
+    <script>
+      modalComponent.onOpenModal('contentsExample');
+    </script>
+    <!-- // Script -->
+  </body>
+</html>

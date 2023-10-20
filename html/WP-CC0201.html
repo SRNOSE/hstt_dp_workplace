@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>고객센터 &gt; 1:1문의 리스트</title>
+    <link rel="stylesheet" href="../../css/wp.common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css" />
+    <script src="../../js/font.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+  </head>
+  <body>
+    <div class="wp-wrap" id="wrap">
+      <!-- Header -->
+      <div class="header-wrap" id="header">
+        <header>
+          <div class="info-bg-wrap">
+            <div class="info-wrap">
+              <h1>HAND SIGN TALK TALK</h1>
+              <div class="service-info">
+                <span>서비스 기간 : 20XX년 X월 X일 ~ 20XX년 X월 X일(기간 만료 <strong>00</strong>일 전)</span>
+              </div>
+              <div class="login-info">
+                <!-- 팝업 활성화 시 .login-info에 .active 클래스 추가 -->
+                <!-- 팝업 활성화 시 aria-label 열기/닫기 -->
+                <!-- 팝업 활성화 시 aria-expanded true/false -->
+                <button
+                  type="button"
+                  class="login-name"
+                  aria-label="계정정보 팝업 {열기}"
+                  aria-controls="loginPopup"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <strong>케이엘큐브님</strong>
+                </button>
+                <div class="login-popup" id="loginPopup" role="listbox" tabindex="-1">
+                  <div class="login-account">
+                    <span class="account-photo"></span>
+                    <div class="account-name">
+                      <span class="role">최고관리자</span>
+                      <span class="name"><strong>케이엘큐브</strong>님</span>
+                    </div>
+                  </div>
+                  <div class="login-option">
+                    <button type="button" class="btn secondary btn-account">
+                      <span>계정정보</span>
+                    </button>
+                    <button type="button" class="btn primary btn-login">
+                      <span>로그아웃</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // .info-wrap-wrap -->
+          <nav class="gnb-wrap">
+            <h2 class="sr-only">메인 메뉴</h2>
+            <ul class="gnb-list">
+              <li>
+                <button type="button">
+                  <span>과금/결제 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>콘텐츠 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통역 콜 이력 관리</span>
+                </button>
+              </li>
+              <li class="active">
+                <button type="button">
+                  <span>고객센터</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통계</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>관리자 관리</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <!-- // .gnb-wrap -->
+        </header>
+      </div>
+      <!-- // Header -->
+
+      <div class="content-outer-wrap" id="content">
+        <!-- lnb -->
+        <div class="lnb-wrap" id="lnbWrap">
+          <!-- {대메뉴}에 현재 선택된 탭의 명칭을 추가해 주세요. -->
+          <ul class="lnb-list" aria-label="{고객센터} 서브 메뉴">
+            <li>
+              <button type="button">
+                <span>공지사항 </span>
+              </button>
+            </li>
+            <li class="active">
+              <button type="button">
+                <span>1:1문의</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="content-inner-wrap">
+          <div class="breadcrumb" aria-label="사이트 이동 경로">
+            <ol>
+              <li>
+                <a href="#">HOME</a>
+              </li>
+              <li>
+                <a href="#">고객센터</a>
+              </li>
+              <li>
+                <span aria-current="page">1:1문의</span>
+              </li>
+            </ol>
+          </div>
+          <div class="content-wrap menu-cscenter-wrap">
+            <div class="content-header">
+              <h3 class="main-title">1:1문의</h3>
+            </div>
+            <div class="content-body inquiry-list-wrap">
+              <section class="section">
+                <h4 class="sr-only">1:1문의 검색</h4>
+                <div class="search-wrap">
+                  <form action="">
+                    <div class="table-wrap">
+                      <table class="table horizontal">
+                        <colgroup>
+                          <col class="colWidth190" />
+                          <col class="colWidthAuto" />
+                        </colgroup>
+                        <caption>
+                          1:1문의 정보. 검색어, 등록일, 상태, 문의유형으로 구성.
+                        </caption>
+                        <tbody>
+                          <tr>
+                            <th scope="row">검색어</th>
+                            <td>
+                              <div class="search-keyword-wrap">
+                                <div class="select-wrap">
+                                  <button type="button" class="selected" aria-label="검색어 카테고리를 선택해 주세요.">전체</button>
+                                  <ul class="select-list">
+                                    <li class="option">
+                                      <span>전체</span>
+                                    </li>
+                                    <li class="option">
+                                      <span>제목</span>
+                                    </li>
+                                    <li class="option">
+                                      <span>내용</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="input-wrap">
+                                  <label for="searchKeword2" class="sr-only">
+                                    <span>검색어를 입력해 주세요.</span>
+                                  </label>
+                                  <div class="input">
+                                    <input type="text" id="searchKeword2" placeholder="검색어를 입력해 주세요." />
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">등록일</th>
+                            <td>
+                              <div class="search-date-wrap">
+                                <div class="search-date">
+                                  <div class="datepicker-wrap">
+                                    <input type="text" class="btn-datepicker" aria-label="등록일 검색 기간 시작일 선택" />
+                                  </div>
+                                  <div class="datepicker-wrap">
+                                    <input type="text" class="btn-datepicker" aria-label="등록일 검색 기간 종료일 선택" />
+                                  </div>
+                                </div>
+                                <div class="radio-group radio-btns" aria-label="자동 입력 날짜 선택">
+                                  <div class="radio-wrap button">
+                                    <input type="radio" id="searchDate01" name="searchArange" />
+                                    <label for="searchDate01">
+                                      <span>오늘</span>
+                                    </label>
+                                  </div>
+                                  <div class="radio-wrap button">
+                                    <input type="radio" id="searchDate02" name="searchArange" />
+                                    <label for="searchDate02">
+                                      <span>15일</span>
+                                    </label>
+                                  </div>
+                                  <div class="radio-wrap button">
+                                    <input type="radio" id="searchDate03" name="searchArange" />
+                                    <label for="searchDate03">
+                                      <span>1개월</span>
+                                    </label>
+                                  </div>
+                                  <div class="radio-wrap button">
+                                    <input type="radio" id="searchDate04" name="searchArange" />
+                                    <label for="searchDate04">
+                                      <span>3개월</span>
+                                    </label>
+                                  </div>
+                                  <div class="radio-wrap button">
+                                    <input type="radio" id="searchDate05" name="searchArange" />
+                                    <label for="searchDate05">
+                                      <span>전체</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">상태</th>
+                            <td>
+                              <div class="radio-group radio-side-btns" aria-label="1:1문의 상태를 선택해 주세요.">
+                                <div class="radio-wrap circle">
+                                  <input type="radio" id="postStatus01" name="postStatus" checked />
+                                  <label for="postStatus01"> <span>전체</span> </label>
+                                </div>
+                                <div class="radio-wrap circle">
+                                  <input type="radio" id="postStatus02" name="postStatus" />
+                                  <label for="postStatus02">
+                                    <span>접수</span>
+                                  </label>
+                                </div>
+                                <div class="radio-wrap circle">
+                                  <input type="radio" id="postStatus03" name="postStatus" />
+                                  <label for="postStatus03">
+                                    <span>답변대기</span>
+                                  </label>
+                                </div>
+                                <div class="radio-wrap circle">
+                                  <input type="radio" id="postStatus04" name="postStatus" />
+                                  <label for="postStatus04">
+                                    <span>답변완료</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">문의유형</th>
+                            <td>
+                              <div class="select-wrap w170">
+                                <button type="button" class="selected" aria-label="문의유형을 선택해 주세요.">전체</button>
+                                <ul class="select-list">
+                                  <li class="option">
+                                    <span>전체</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>로그인</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>서비스 신청</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>이용요금 결제</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>서비스 콘텐츠 문의</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>탈퇴</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>기타</span>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="btn-wrap center search-btn-wrap">
+                      <button type="button" class="btn secondary btn-init">
+                        <span>초기화</span>
+                      </button>
+                      <button type="button" class="btn primary btn-search">
+                        <span>검색</span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </section>
+              <section class="section">
+                <h4 class="sr-only">1:1문의 검색 결과</h4>
+                <div class="search-result-wrap">
+                  <div class="result-view-options">
+                    <span class="result-count">
+                      <span aria-label="검색 결과 수">검색 <strong>10</strong>개</span>
+                      <!-- 검색 조건에 따라 { } 안의 내용을 변경해 주세요. -->
+                      <span aria-label="{전체 1:1문의} 수">총 <strong>10</strong>개</span>
+                    </span>
+                    <form action="">
+                      <fieldset>
+                        <legend>페이지 노출 게시글 갯수</legend>
+                        <div class="select-wrap">
+                          <button class="selected">10개</button>
+                          <ul class="select-list">
+                            <li class="option">
+                              <span>10개</span>
+                            </li>
+                            <li class="option">
+                              <span>20개</span>
+                            </li>
+                            <li class="option">
+                              <span>50개</span>
+                            </li>
+                            <li class="option">
+                              <span>100개</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </fieldset>
+                    </form>
+                  </div>
+                  <!-- // .result-view-options -->
+                  <div class="table-wrap">
+                    <table class="table vertical">
+                      <colgroup>
+                        <col class="colWidthNotice70" />
+                        <col class="colWidthNotice70" />
+                        <col class="colWidthNotice160" />
+                        <col class="colWidthAuto" />
+                        <col class="colWidthNotice100" />
+                        <col class="colWidthNotice140" />
+                        <col class="colWidthNotice70" />
+                        <col class="colWidthNotice100" />
+                        <col class="colWidthNotice210" />
+                      </colgroup>
+                      <caption>
+                        1:1문의 검색 결과 목록. 1:1문의 선택 여부, 번호, 문의유형, 제목, 작성자, 등록일, 조회, 답변상태, 관리로 구성.
+                      </caption>
+                      <thead>
+                        <tr>
+                          <th scope="col" class="txt-center td-checkbox-wrap">
+                            <div class="checkbox-wrap">
+                              <input type="checkbox" id="checkResultAll" />
+                              <label for="checkResultAll">
+                                <span class="sr-only">1:1문의 결과 목록 전체 선택</span>
+                              </label>
+                            </div>
+                          </th>
+                          <th scope="col">번호</th>
+                          <th scope="col">문의유형</th>
+                          <th scope="col">제목</th>
+                          <th scope="col">작성자</th>
+                          <th scope="col">등록일</th>
+                          <th scope="col">조회</th>
+                          <th scope="col">답변상태</th>
+                          <th scope="col">관리</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="txt-center td-checkbox-wrap">
+                            <div class="checkbox-wrap">
+                              <input type="checkbox" id="result01" />
+                              <label for="result01">
+                                <!-- { } 안의 내용을 변경해 주세요. -->
+                                <span class="sr-only">{1:1문의 문의유형} 선택</span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>10</td>
+                          <td>서비스 콘텐츠 문의</td>
+                          <td>
+                            <div class="table-list">
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="title-link"
+                                >서비스 신청 후 입금완료 했습니다.</a
+                              >
+                              <a href="javascript:;" target="_blank" role="button" title="화면 이동" class="detail-more"
+                                ><span class="sr-only">상세보기</span></a
+                              >
+                            </div>
+                          </td>
+                          <td>김핸드</td>
+                          <td>YYYY.MM.DD</td>
+                          <td>2</td>
+                          <td>답변완료</td>
+                          <td>
+                            <div class="btn-wrap side horizontal table-inner-btn">
+                              <button type="button" class="btn extra-sm secondary btn-table-edit" title="화면 이동">
+                                <span>수정</span>
+                              </button>
+                              <button type="button" class="btn extra-sm btn-table-delete">
+                                <span>삭제</span>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <!--검색된 정보가 없는 경우 -->
+                        <!-- <tr>
+                          <td colspan="9">
+                            <p class="no-data">검색된 정보가 없습니다.</p>
+                          </td>
+                        </tr> -->
+                        <!-- 등록된 게시글이 없는 경우 -->
+                        <!-- <tr>
+                          <td colspan="9">
+                            <p class="no-data">등록된 게시글이 없습니다.</p>
+                          </td>
+                        </tr> -->
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- // .table-wrap -->
+                  <div class="result-process-options">
+                    <div class="btn-wrap side">
+                      <button type="button" class="btn extra-sm btn-delete">
+                        <span>선택 삭제</span>
+                      </button>
+                      <button type="button" class="btn extra-sm btn-download">
+                        <span>엑셀 다운로드</span>
+                      </button>
+                    </div>
+                    <form action="">
+                      <div class="common-pagination-wrap">
+                        <button type="button" class="btn-page btn-first" disabled>
+                          <span class="sr-only">처음 목록으로 이동</span>
+                        </button>
+                        <button type="button" class="btn-page btn-prev" disabled>
+                          <span class="sr-only">이전 목록으로 이동</span>
+                        </button>
+                        <ol>
+                          <li>
+                            <button type="button" class="btn-page-num active" aria-label="목록 이동">
+                              <span>1</span>
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-page-num" aria-label="목록 이동">
+                              <span>2</span>
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn-page-num" aria-label="목록 이동">
+                              <span>3</span>
+                            </button>
+                          </li>
+                        </ol>
+                        <button type="button" class="btn-page btn-next">
+                          <span class="sr-only">다음 목록으로 이동</span>
+                        </button>
+                        <button type="button" class="btn-page btn-last">
+                          <span class="sr-only">끝 목록으로 이동</span>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- // .result-process-options -->
+                </div>
+              </section>
+            </div>
+            <div class="content-footer">
+              <div class="btn-wrap pos-header">
+                <button type="button" class="btn extra-sm w150 primary btn-post-register">
+                  <span>게시글 등록</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // .wp-body -->
+
+      <div class="footer-wrap" id="footer">
+        <footer>Copyright ⓒ HAND SIGN TALK TALK. All Rights Reserved.</footer>
+      </div>
+    </div>
+    <!-- // .wp-wrap -->
+
+    <!-- Script -->
+    <script src="../../js/pub_index.js"></script>
+    <!-- // Script -->
+  </body>
+</html>

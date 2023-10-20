@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>관리자 관리 &gt; 탈퇴 신청</title>
+    <link rel="stylesheet" href="../../css/wp.common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css" />
+    <script src="../../js/font.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+  </head>
+  <body>
+    <div class="wp-wrap" id="wrap">
+      <!-- Header -->
+      <div class="header-wrap" id="header">
+        <header>
+          <div class="info-bg-wrap">
+            <div class="info-wrap">
+              <h1>HAND SIGN TALK TALK</h1>
+              <div class="service-info">
+                <span>서비스 기간 : 20XX년 X월 X일 ~ 20XX년 X월 X일(기간 만료 <strong>00</strong>일 전)</span>
+              </div>
+              <div class="login-info">
+                <!-- 팝업 활성화 시 .login-info에 .active 클래스 추가 -->
+                <!-- 팝업 활성화 시 aria-label 열기/닫기 -->
+                <!-- 팝업 활성화 시 aria-expanded true/false -->
+                <button
+                  type="button"
+                  class="login-name"
+                  aria-label="계정정보 팝업 {열기}"
+                  aria-controls="loginPopup"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <strong>케이엘큐브님</strong>
+                </button>
+                <div class="login-popup" id="loginPopup" role="listbox" tabindex="-1">
+                  <div class="login-account">
+                    <span class="account-photo"></span>
+                    <div class="account-name">
+                      <span class="role">최고관리자</span>
+                      <span class="name"><strong>케이엘큐브</strong>님</span>
+                    </div>
+                  </div>
+                  <div class="login-option">
+                    <button type="button" class="btn secondary btn-account">
+                      <span>계정정보</span>
+                    </button>
+                    <button type="button" class="btn primary btn-login">
+                      <span>로그아웃</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // .info-wrap-wrap -->
+          <nav class="gnb-wrap">
+            <h2 class="sr-only">메인 메뉴</h2>
+            <ul class="gnb-list">
+              <li>
+                <button type="button">
+                  <span>과금/결제 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>콘텐츠 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통역 콜 이력 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>고객센터</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통계</span>
+                </button>
+              </li>
+              <li class="active">
+                <button type="button">
+                  <span>관리자 관리</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <!-- // .gnb-wrap -->
+        </header>
+      </div>
+      <!-- // Header -->
+
+      <div class="content-outer-wrap" id="content">
+        <!-- lnb -->
+        <div class="lnb-wrap" id="lnbWrap">
+          <!-- {대메뉴}에 현재 선택된 탭의 명칭을 추가해 주세요. -->
+          <h2 class="sr-only">{대메뉴} 서브 메뉴</h2>
+          <ul class="lnb-list" role="navigation">
+            <li>
+              <button type="button">
+                <span>관리자 설정</span>
+              </button>
+            </li>
+            <li class="active">
+              <button type="button">
+                <span>탈퇴 신청</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="content-inner-wrap">
+          <div class="breadcrumb" aria-label="사이트 이동 경로">
+            <ol>
+              <li>
+                <a href="#">HOME</a>
+              </li>
+              <li>
+                <a href="#">관리자 관리</a>
+              </li>
+              <li>
+                <span aria-current="page">탈퇴 신청</span>
+              </li>
+            </ol>
+          </div>
+          <div class="content-wrap menu-admin-wrap menu-withdraw-wrap">
+            <div class="content-header line-bottom">
+              <h3 class="main-title">탈퇴 신청</h3>
+            </div>
+            <div class="content-body">
+              <section class="section">
+                <h4 class="sub-title sr-only">회원 탈퇴 신청</h4>
+                <form action="">
+                  <fieldset>
+                    <legend>회원 탈퇴 동의 여부</legend>
+                    <div class="agreement-withdraw-wrap">
+                      <ul class="agreement-withdraw-list" id="agreementWithdraw">
+                        <li class="important">탈퇴 시 기업정보 및 서비스 콘텐츠 모든 데이터가 삭제됩니다.</li>
+                        <li class="important">
+                          회원탈퇴 처리 후 재가입은 14일 이후 가능합니다. 회원님의 정보를 복원할 수 없으며, 해당 아이디는 재가입이
+                          불가합니다.
+                        </li>
+                        <li class="important">수어 문장 제작 비용 환불은 고객센터(0000-0000)로 문의해 주세요.</li>
+                        <li>
+                          운영자의 승인 절차에 의해 탈퇴 처리가 진행되며, 정상적으로 탈퇴 처리 완료 시 회원님의 이메일 주소로 안내 메시지를
+                          발송해 드립니다.
+                        </li>
+                      </ul>
+                      <div class="checkbox-wrap" aria-labelledby="agreementWithdraw">
+                        <input type="checkbox" id="checkWithDraw" />
+                        <label for="checkWithDraw">
+                          <span>해당 내용을 모두 확인했으며, 회원탈퇴 신청에 동의합니다.</span>
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <legend>회원 탈퇴 사유 체크</legend>
+                    <div class="table-title">
+                      <h4 class="sub-title">회원 탈퇴 사유</h4>
+                      <div class="table-tip">
+                        <span class="required">
+                          <span class="sr-only">필수 입력 항목</span>
+                        </span>
+                        필수 표시는 필수 입력 항목으로 반드시 입력해 주세요.
+                      </div>
+                    </div>
+                    <div class="reason-withdraw-wrap">
+                      <ul>
+                        <li>
+                          <div class="checkbox-wrap circle">
+                            <input type="checkbox" id="reason01" />
+                            <label for="reason01">
+                              <span>사용빈도가 낮아서</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="checkbox-wrap circle">
+                            <input type="checkbox" id="reason02" />
+                            <label for="reason02">
+                              <span>기업정보 변경으로 인한 재가입</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="checkbox-wrap circle">
+                            <input type="checkbox" id="reason03" />
+                            <label for="reason03">
+                              <span>서비스 이용 불편</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="checkbox-wrap circle">
+                            <input type="checkbox" id="reason04" />
+                            <label for="reason04">
+                              <span>가격 불만</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="checkbox-wrap circle">
+                            <input type="checkbox" id="reason05" />
+                            <label for="reason05">
+                              <span>타 사이트의 유사서비스 이용</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="checkbox-wrap circle">
+                            <input type="checkbox" id="reason06" />
+                            <label for="reason06" id="reason06Input">
+                              <span>기타</span>
+                            </label>
+                          </div>
+                          <div class="textarea-wrap">
+                            <textarea aria-label="기타 사유 입력" placeholder="기타 사유를 입력해 주세요."></textarea>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </fieldset>
+                  <div class="content-inner-footer">
+                    <div class="btn-wrap pos-header">
+                      <button type="button" aria-label="관리자 목록 이동" class="btn extra-sm secondary w150 btn-withdraw">
+                        <span>탈퇴 신청</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </section>
+              <!-- // .section -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // .wp-body -->
+
+      <div class="footer-wrap" id="footer">
+        <footer>Copyright ⓒ HAND SIGN TALK TALK. All Rights Reserved.</footer>
+      </div>
+    </div>
+    <!-- // .wp-wrap -->
+
+    <!-- Script -->
+    <script src="../../js/pub_index.js"></script>
+    <!-- // Script -->
+  </body>
+</html>

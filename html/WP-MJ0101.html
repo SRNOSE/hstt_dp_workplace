@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>회원가입 &gt; 서비스 신청</title>
+    <link rel="stylesheet" href="../../css/wp.common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css" />
+    <script src="../../js/font.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+  </head>
+  <body>
+    <div class="wp-wrap" id="wrap">
+      <div class="signup-wrap">
+        <div class="signup-header">
+          <h1 class="title">서비스 신청</h1>
+        </div>
+        <!-- // .signup-header -->
+        <div class="signup-content">
+          <section class="section">
+            <form action="">
+              <fieldset>
+                <legend>관리자 정보 입력</legend>
+                <div class="table-title">
+                  <h2 class="main-title">관리자 정보</h2>
+                  <div class="table-tip">
+                    <span class="required">
+                      <span class="sr-only">필수 입력 항목</span>
+                    </span>
+                    필수 표시는 필수 입력 항목으로 반드시 입력해 주세요.
+                  </div>
+                </div>
+                <div class="table-wrap">
+                  <!-- table 작업 시,
+                      <th> 안에 있는 label의 for와
+                      <td> 안에 있는 input의 id를 연결해 주세요.
+    
+                      error, success 메시지가 있을 경우,
+                      input의 aria-describedby과
+                      메시지의 id를 연결해 주세요.
+        
+                      input 입력 시,
+                      내용 전체 삭제 버튼 있을 경우
+                      .input-wrap에 .active-delete 클래스 추가
+                    -->
+                  <table class="table horizontal">
+                    <colgroup>
+                      <col class="colWidth260" />
+                      <col class="colWidthAuto" />
+                    </colgroup>
+                    <caption>
+                      관리자 정보. 아이디(이메일 주소), 비밀번호, 비밀번호 재입력, 이름, 휴대폰 번호로 구성.
+                    </caption>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupUserId">
+                            <span>아이디(이메일 주소)</span>
+                            <span class="required">
+                              <span class="sr-only">필수 입력 항목</span>
+                            </span>
+                          </label>
+                        </th>
+                        <td>
+                          <div class="input-wrap">
+                            <div class="input">
+                              <input
+                                type="text"
+                                id="signupUserId"
+                                aria-describedby="msgSignupUserId"
+                                placeholder="아이디(이메일 주소)를 입력해 주세요."
+                              />
+                            </div>
+                            <p class="message" id="msgSignupUserId">입력하신 아이디(이메일 주소)가 올바르지 않습니다.</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupUserPw">
+                            <span>비밀번호</span>
+                            <span class="required">
+                              <span class="sr-only">필수 입력 항목</span>
+                            </span>
+                          </label>
+                        </th>
+                        <td>
+                          <div class="input-wrap">
+                            <div class="input">
+                              <input
+                                type="text"
+                                id="signupUserPw"
+                                aria-describedby="msgSignupUserPw"
+                                placeholder="영문, 숫자, 특수문자 혼합 9~16자 이내 입력해 주세요."
+                              />
+                            </div>
+                            <p class="message" id="msgSignupUserPw">영문, 숫자, 특수문자 혼합 9~16자 이내 입력해 주세요.</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupUserRePw">
+                            <span>비밀번호 재입력</span>
+                            <span class="required">
+                              <span class="sr-only">필수 입력 항목</span>
+                            </span>
+                          </label>
+                        </th>
+                        <td>
+                          <div class="input-wrap">
+                            <div class="input">
+                              <input
+                                type="text"
+                                id="signupUserRePw"
+                                aria-describedby="msgSignupUserRePw"
+                                placeholder="영문, 숫자, 특수문자 혼합 9~16자 이내 입력해 주세요."
+                              />
+                            </div>
+                            <p class="message" id="msgSignupUserRePw">기존과 다른 새로운 비밀번호를 입력해 주세요.</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupUserName">
+                            <span>이름</span>
+                            <span class="required">
+                              <span class="sr-only">필수 입력 항목</span>
+                            </span>
+                          </label>
+                        </th>
+                        <td>
+                          <div class="input-wrap active-delete">
+                            <div class="input">
+                              <input
+                                type="text"
+                                id="signupUserName"
+                                aria-describedby="msgUserName"
+                                placeholder="두 자 이상 입력해 주세요."
+                              />
+                              <button type="button" class="btn-delete">
+                                <span class="sr-only">내용 삭제</span>
+                              </button>
+                            </div>
+                            <p class="message" id="msgUserName">두 자 이상 입력해 주세요.</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupUserPhone">
+                            <span>휴대폰 번호</span>
+                            <span class="required">
+                              <span class="sr-only">필수 입력 항목</span>
+                            </span>
+                          </label>
+                        </th>
+                        <td>
+                          <div class="input-wrap">
+                            <div class="input">
+                              <input
+                                type="text"
+                                id="signupUserPhone"
+                                aria-describedby="msgUserPhone"
+                                placeholder="휴대폰 번호(- 없이)를 입력해 주세요."
+                                maxlength="11"
+                              />
+                            </div>
+                            <p class="message" id="msgUserPhone">휴대폰 번호가 올바르지 않습니다.</p>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>서비스 분야 입력</legend>
+                <div class="table-title">
+                  <h2 class="main-title">서비스 분야</h2>
+                  <div class="table-tip">
+                    <span class="required">
+                      <span class="sr-only">필수 입력 항목</span>
+                    </span>
+                    필수 표시는 필수 입력 항목으로 반드시 입력해 주세요.
+                  </div>
+                </div>
+                <div class="table-wrap">
+                  <!-- table 작업 시,
+                      <th> 안에 있는 label의 for와
+                      <td> 안에 있는 input의 id를 연결해 주세요.
+    
+                      error, success 메시지가 있을 경우,
+                      input의 aria-describedby과
+                      메시지의 id를 연결해 주세요.
+        
+                      input 입력 시,
+                      내용 전체 삭제 버튼 있을 경우
+                      .input-wrap에 .active-delete 클래스 추가
+                    -->
+                  <table class="table horizontal">
+                    <colgroup>
+                      <col class="colWidth260" />
+                      <col class="colWidthAuto" />
+                    </colgroup>
+                    <caption>
+                      서비스 분야 정보. 서비스 분야, 지역 선택으로 구성.
+                    </caption>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          서비스 분야
+                          <span class="required">
+                            <span class="sr-only">필수 입력 항목</span>
+                          </span>
+                        </th>
+                        <td>
+                          <div class="service-select-wrap">
+                            <!-- select 비활성화 시 .select-wrap에 disabled 속성 추가 -->
+                            <div class="select-wrap">
+                              <button type="button" class="selected" aria-label="서비스 분야 형태를 선택해 주세요.">= 선택하세요 =</button>
+                              <ul class="select-list">
+                                <li class="option">
+                                  <span>병원</span>
+                                </li>
+                                <li class="option">
+                                  <span>요양병원</span>
+                                </li>
+                                <li class="option">
+                                  <span>보건소</span>
+                                </li>
+                                <li class="option">
+                                  <span>공공기관</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- select 비활성화 시 .select-wrap에 disabled 속성 추가 -->
+                            <div class="select-wrap disabled">
+                              <button type="button" class="selected" aria-label="상세 내용을 선택해 주세요.">= 선택하세요 =</button>
+                              <ul class="select-list">
+                                <li class="option">
+                                  <span>1차 병원</span>
+                                </li>
+                                <li class="option">
+                                  <span>2차 병원</span>
+                                </li>
+                                <li class="option">
+                                  <span>3차 병원</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          지역 선택
+                          <span class="required">
+                            <span class="sr-only">필수 입력 항목</span>
+                          </span>
+                        </th>
+                        <td>
+                          <div class="service-select-wrap">
+                            <!-- select 비활성화 시 .select-wrap에 disabled 속성 추가 -->
+                            <div class="select-wrap top">
+                              <button type="button" class="selected" aria-label="시, 도를 선택해 주세요.">= 선택하세요 =</button>
+                              <ul class="select-list">
+                                <li class="option">
+                                  <span>서울특별시</span>
+                                </li>
+                                <li class="option">
+                                  <span>부산광역시</span>
+                                </li>
+                                <li class="option">
+                                  <span>대구광역시</span>
+                                </li>
+                                <li class="option">
+                                  <span>인천광역시</span>
+                                </li>
+                                <li class="option">
+                                  <span>광주광역시</span>
+                                </li>
+                                <li class="option">
+                                  <span>대전광역시</span>
+                                </li>
+                                <li class="option">
+                                  <span>울산광역시</span>
+                                </li>
+                                <li class="option">
+                                  <span>세종특별자치시</span>
+                                </li>
+                                <li class="option">
+                                  <span>경기도</span>
+                                </li>
+                                <li class="option">
+                                  <span>강원특별자치도</span>
+                                </li>
+                                <li class="option">
+                                  <span>충청북도</span>
+                                </li>
+                                <li class="option">
+                                  <span>충청남도</span>
+                                </li>
+                                <li class="option">
+                                  <span>전라북도</span>
+                                </li>
+                                <li class="option">
+                                  <span>전라남도</span>
+                                </li>
+                                <li class="option">
+                                  <span>경상북도</span>
+                                </li>
+                                <li class="option">
+                                  <span>경상남도</span>
+                                </li>
+                                <li class="option">
+                                  <span>제주특별자치도</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- select 비활성화 시 .select-wrap에 disabled 속성 추가 -->
+                            <div class="select-wrap disabled">
+                              <button type="button" class="selected" aria-label="군, 구를 선택해 주세요.">= 선택하세요 =</button>
+                              <ul class="select-list">
+                                <li class="option">
+                                  <span>강남구</span>
+                                </li>
+                                <li class="option">
+                                  <span>강동구</span>
+                                </li>
+                                <li class="option">
+                                  <span>강서구</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>기업 정보 입력</legend>
+                <div class="table-title">
+                  <h2 class="main-title">기업 정보</h2>
+                  <div class="table-tip">
+                    <span class="required">
+                      <span class="sr-only">필수 입력 항목</span>
+                    </span>
+                    필수 표시는 필수 입력 항목으로 반드시 입력해 주세요.
+                  </div>
+                </div>
+                <div class="table-wrap">
+                  <!-- table 작업 시,
+                      <th> 안에 있는 label의 for와
+                      <td> 안에 있는 input의 id를 연결해 주세요.
+    
+                      error, success 메시지가 있을 경우,
+                      input의 aria-describedby과
+                      메시지의 id를 연결해 주세요.
+        
+                      input 입력 시,
+                      내용 전체 삭제 버튼 있을 경우
+                      .input-wrap에 .active-delete 클래스 추가
+                    -->
+                  <table class="table horizontal">
+                    <colgroup>
+                      <col class="colWidth260" />
+                      <col class="colWidthAuto" />
+                      <col class="colWidth260" />
+                      <col class="colWidthAuto" />
+                    </colgroup>
+                    <caption>
+                      기업 정보. 사업자 등록번호, 사업자 등록증 첨부, 기업명, 대표자 성명, 기업 로고 첨부, 도메인 주소, 업태, 기업 주소로
+                      구성.
+                    </caption>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupCompanyNumber">
+                            <span>사업자 등록번호</span>
+                            <span class="required">
+                              <span class="sr-only">필수 입력 항목</span>
+                            </span>
+                          </label>
+                        </th>
+                        <td colspan="3">
+                          <div class="input-wrap company-number">
+                            <div class="input">
+                              <input type="text" id="signupCompanyNumber" />
+                            </div>
+                            <div class="input">
+                              <input type="text" id="signupCompanyNumber2" />
+                            </div>
+                            <div class="input">
+                              <input type="text" id="signupCompanyNumber3" />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupCompanyLicense">
+                            <span>사업자 등록증 첨부</span>
+                            <span class="required">
+                              <span class="sr-only">필수 입력 항목</span>
+                            </span>
+                          </label>
+                        </th>
+                        <td colspan="3">
+                          <div class="input-wrap file success">
+                            <div class="input">
+                              <input type="file" id="signupCompanyLicense" aria-describedby="msgSignupCompanyLicense" />
+                              <label for="file">
+                                <span>파일 선택</span>
+                              </label>
+                              <span class="file-title">사업자 등록증 사본.pdf (3MB)</span>
+                            </div>
+                            <p class="message" id="msgSignupCompanyLicense">
+                              ※ 첨부 서류는 5MB 이하의 파일(jpg, jpeg, gif, png, bmp, pdf)로 첨부하여 주시기 바랍니다.
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupCompanyName">
+                            <span>기업명</span>
+                            <span class="required">
+                              <span class="sr-only">필수 입력 항목</span>
+                            </span>
+                          </label>
+                        </th>
+                        <td colspan="3">
+                          <div class="input-wrap">
+                            <div class="input">
+                              <input
+                                type="text"
+                                id="signupCompanyName"
+                                aria-describedby="msgSignupCompanyName"
+                                placeholder="기업명을 입력해 주세요."
+                              />
+                            </div>
+                            <p class="message" id="msgSignupCompanyName">기업명을 입력해 주세요</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupOwnerName">
+                            <span>대표자 성명</span>
+                            <span class="required">
+                              <span class="sr-only">필수 입력 항목</span>
+                            </span>
+                          </label>
+                        </th>
+                        <td colspan="3">
+                          <div class="input-wrap">
+                            <div class="input">
+                              <input
+                                type="text"
+                                id="signupOwnerName"
+                                aria-describedby="msgSignupOwnerName"
+                                placeholder="대표자 성명을  입력해 주세요."
+                              />
+                            </div>
+                            <p class="message" id="msgSignupOwnerName">대표자 성명을 입력해 주세요</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupCompanyLogo">
+                            <span>기업 로고 첨부</span>
+                          </label>
+                        </th>
+                        <td colspan="3">
+                          <div class="input-wrap file success">
+                            <div class="input">
+                              <input type="file" id="signupCompanyLogo" aria-describedby="msgSignupCompanyLogo" />
+                              <label for="file">
+                                <span>파일 선택</span>
+                              </label>
+                              <span class="file-title">회사로고.png (3MB)</span>
+                            </div>
+                            <p class="message" id="msgSignupCompanyLogo">
+                              ※ 첨부 서류는 5MB 이하의 파일(jpg, jpeg, gif, png, bmp, pdf)로 첨부하여 주시기 바랍니다.
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupCompanySite">
+                            <span>도메인 주소</span>
+                            <span class="required">
+                              <span class="sr-only">필수 입력 항목</span>
+                            </span>
+                          </label>
+                        </th>
+                        <td colspan="3">
+                          <div class="input-wrap company-site">
+                            <div class="input">
+                              http://
+                              <input type="text" id="signupCompanySite" aria-describedby="msgSignupCompanySite" />
+                            </div>
+                            <p class="message" id="msgSignupCompanySite">대표자 성명을 입력해 주세요</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupCompanyAbout">
+                            <span>업태</span>
+                          </label>
+                        </th>
+                        <td>
+                          <div class="input-wrap w100p">
+                            <div class="input">
+                              <input type="text" id="signupCompanyAbout" />
+                            </div>
+                          </div>
+                        </td>
+                        <th scope="row">
+                          <label for="signupCompanyBusiness">
+                            <span>종목</span>
+                          </label>
+                        </th>
+                        <td>
+                          <div class="input-wrap w100p">
+                            <div class="input">
+                              <input type="text" id="signupCompanyBusiness" />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="signupCompanyAddress">
+                            <span>기업 주소</span>
+                          </label>
+                        </th>
+                        <td colspan="3">
+                          <div class="input-wrap address">
+                            <div class="input">
+                              <input type="text" id="address1" aria-describedby="msgAddress" placeholder="우편번호 입력" disabled />
+                              <button type="button" class="btn extra-sm secondary">
+                                <span>우편번호 검색</span>
+                              </button>
+                            </div>
+                            <div class="input">
+                              <input type="text" id="address2" placeholder="기본주소 입력" disabled />
+                            </div>
+                            <div class="input">
+                              <input type="text" id="address3" placeholder="상세주소 입력" />
+                            </div>
+                            <p class="message" id="msgAddress">
+                              ※ 첨부 서류는 5MB 이하의 파일(jpg, jpeg, gif, png, bmp, pdf)로 첨부하여 주시기 바랍니다.
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>서비스 신청 약관 동의</legend>
+                <div class="agreement-wrap">
+                  <h2 class="main-title" id="agreementAllTitle">약관 동의</h2>
+                  <div class="agreement-all-wrap" aria-labelledby="agreementAllTitle">
+                    <div class="checkbox-wrap circle">
+                      <input type="checkbox" id="agreementAll" />
+                      <label for="agreementAll">
+                        <span>모든 약관 및 동의서의 내용을 확인하였으며, 모든 동의 사항에 동의합니다.</span>
+                      </label>
+                    </div>
+                  </div>
+                  <ul class="agreement-list-wrap">
+                    <li>
+                      <div class="checkbox-wrap circle">
+                        <input type="checkbox" id="agreementRequired" />
+                        <label for="agreementRequired">
+                          <span><strong>[필수]</strong> 필수 약관 동의 항목</span>
+                        </label>
+                      </div>
+                      <div class="btn-wrap">
+                        <button type="button" class="btn sm primary-dark-line">
+                          <span>내용보기</span>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox-wrap circle">
+                        <input type="checkbox" id="agreementSelect" />
+                        <label for="agreementSelect">
+                          <span><strong>[선택]</strong> 마케팅 정보 수신 동의</span>
+                        </label>
+                      </div>
+                      <div class="btn-wrap">
+                        <button type="button" class="btn sm primary-dark-line">
+                          <span>내용보기</span>
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="agreement-sns-wrap">
+                    <div class="checkbox-wrap circle">
+                      <input type="checkbox" id="agreementEmail" />
+                      <label for="agreementEmail">
+                        <span>이메일</span>
+                      </label>
+                    </div>
+                    <div class="checkbox-wrap circle">
+                      <input type="checkbox" id="agreementSms" />
+                      <label for="agreementSms">
+                        <span>SMS</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="btn-wrap center signup-btn-wrap">
+                <button type="button" class="btn lg secondary">
+                  <span>취소</span>
+                </button>
+                <button type="button" class="btn lg primary">
+                  <span>서비스 신청</span>
+                </button>
+                <button type="button" class="btn lg primary" disabled>
+                  <span>서비스 신청</span>
+                </button>
+              </div>
+            </form>
+          </section>
+          <!-- // section -->
+        </div>
+        <!-- // .signup-content -->
+        <div class="footer-wrap" id="footer">
+          <footer>Copyright ⓒ HAND SIGN TALK TALK. All Rights Reserved.</footer>
+        </div>
+      </div>
+      <!-- // .signup-wrap -->
+    </div>
+    <!-- // .wp-wrap -->
+
+    <!-- Script -->
+    <script src="../../js/pub_index.js"></script>
+    <!-- // Script -->
+  </body>
+</html>

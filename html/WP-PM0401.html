@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>과금 및 결제 관리 &gt; 서비스 해지</title>
+    <link rel="stylesheet" href="../../css/wp.common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker.min.css" />
+    <script src="../../js/font.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+  </head>
+  <body>
+    <div class="wp-wrap" id="wrap">
+      <!-- Header -->
+      <div class="header-wrap" id="header">
+        <header>
+          <div class="info-bg-wrap">
+            <div class="info-wrap">
+              <h1>HAND SIGN TALK TALK</h1>
+              <div class="service-info">
+                <span>서비스 기간 : 20XX년 X월 X일 ~ 20XX년 X월 X일(기간 만료 <strong>00</strong>일 전)</span>
+              </div>
+              <div class="login-info">
+                <!-- 팝업 활성화 시 .login-info에 .active 클래스 추가 -->
+                <!-- 팝업 활성화 시 aria-label 열기/닫기 -->
+                <!-- 팝업 활성화 시 aria-expanded true/false -->
+                <button
+                  type="button"
+                  class="login-name"
+                  aria-label="계정정보 팝업 {열기}"
+                  aria-controls="loginPopup"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  tabindex="0"
+                >
+                  <strong>케이엘큐브님</strong>
+                </button>
+                <div class="login-popup" id="loginPopup" role="listbox" tabindex="-1">
+                  <div class="login-account">
+                    <span class="account-photo"></span>
+                    <div class="account-name">
+                      <span class="role">최고관리자</span>
+                      <span class="name"><strong>케이엘큐브</strong>님</span>
+                    </div>
+                  </div>
+                  <div class="login-option">
+                    <button type="button" class="btn secondary btn-account">
+                      <span>계정정보</span>
+                    </button>
+                    <button type="button" class="btn primary btn-login">
+                      <span>로그아웃</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // .info-wrap-wrap -->
+          <nav class="gnb-wrap">
+            <h2 class="sr-only">메인 메뉴</h2>
+            <ul class="gnb-list">
+              <li class="active">
+                <button type="button">
+                  <span>과금/결제 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>콘텐츠 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통역 콜 이력 관리</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>고객센터</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>통계</span>
+                </button>
+              </li>
+              <li>
+                <button type="button">
+                  <span>관리자 관리</span>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <!-- // .gnb-wrap -->
+        </header>
+      </div>
+      <!-- // Header -->
+
+      <div class="content-outer-wrap" id="content">
+        <!-- lnb -->
+        <div class="lnb-wrap" id="lnbWrap">
+          <!-- {대메뉴}에 현재 선택된 탭의 명칭을 추가해 주세요. -->
+          <ul class="lnb-list" aria-label="{과금/결제 관리} 서브 메뉴">
+            <li>
+              <button type="button">
+                <span>이용 요금 결제</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>결제 내역</span>
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <span>결제 수단 관리</span>
+              </button>
+            </li>
+            <li class="active">
+              <button type="button">
+                <span>서비스 해지</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="content-inner-wrap">
+          <div class="breadcrumb" aria-label="사이트 이동 경로">
+            <ol>
+              <li>
+                <a href="#">HOME</a>
+              </li>
+              <li>
+                <a href="#">과금/결제 관리</a>
+              </li>
+              <li>
+                <span aria-current="page">서비스 해지</span>
+              </li>
+            </ol>
+          </div>
+          <div class="content-wrap menu-payment-wrap">
+            <div class="content-header line-bottom">
+              <h3 class="main-title">서비스 해지</h3>
+            </div>
+            <div class="content-body service-cancellation">
+              <!-- 서비스 해지 상품이 있는 경우 -->
+              <form action="">
+                <section class="section">
+                  <h4 class="sr-only">이용 중인 서비스 정보 노출</h4>
+                  <fieldset>
+                    <legend>이용 중인 서비스</legend>
+                    <div class="table-title">
+                      <h4 class="sub-title">이용 중인 서비스</h4>
+                    </div>
+                    <div class="table-wrap">
+                      <table class="table vertical">
+                        <colgroup>
+                          <col class="colWidthService70" />
+                          <col class="colWidthAuto" />
+                          <col class="colWidthService170" />
+                          <col class="colWidthService170" />
+                          <col class="colWidthAuto" />
+                          <col class="colWidthService170" />
+                          <col class="colWidthService170" />
+                        </colgroup>
+                        <caption>
+                          이용 중인 서비스. 서비스 상품, 서비스/기간/문장 수, 결제수단, 결제일, 결제금액, 상태로 구성.
+                        </caption>
+                        <tbody>
+                          <tr>
+                            <th scope="row"></th>
+                            <th scope="row">서비스 상품</th>
+                            <th scope="row">서비스 기간/문장 수</th>
+                            <th scope="row">결제수단</th>
+                            <th scope="row">결제일</th>
+                            <th scope="row">결제금액</th>
+                            <th scope="row">상태</th>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="radio-wrap circle">
+                                <input type="radio" id="radio486" name="defaultRadio" />
+                                <label for="radio486"> </label>
+                              </div>
+                            </td>
+                            <td>핸드사인톡톡 APP형</td>
+                            <td>12개월</td>
+                            <td>무통장 입금</td>
+                            <td>23.09.12 24:24</td>
+                            <td>100,000원</td>
+                            <td>해지 신청</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="service-table-bottom">
+                      <div class="btn-wrap">
+                        <button type="button" class="btn extra-sm w180 primary btn-refund-amount">
+                          <span>환불 예상 금액 계산하기</span>
+                        </button>
+                      </div>
+                      <span class="big-bold">환불 예상 금액 : <strong>100,000</strong>원</span>
+                    </div>
+                  </fieldset>
+                </section>
+                <section class="section">
+                  <div class="table-title">
+                    <h4 class="sub-title">환불 정책</h4>
+                  </div>
+                  <div class="refund-policy"></div>
+                </section>
+                <section class="section">
+                  <fieldset>
+                    <legend>서비스 해지 사유 체크</legend>
+                    <div class="table-title star">
+                      <h4 class="sub-title">서비스 해지 사유</h4>
+                      <div class="table-tip">
+                        <span class="required">
+                          <span class="sr-only">필수 입력 항목</span>
+                        </span>
+                        필수 표시는 필수 입력 항목으로 반드시 입력해 주세요.
+                      </div>
+                    </div>
+                    <div class="reason-withdraw-wrap">
+                      <ul>
+                        <li>
+                          <div class="checkbox-wrap circle">
+                            <input type="checkbox" id="reason01" aria-checked="false" />
+                            <label for="reason01">
+                              <span>서비스 이용요금이 비싸서</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="checkbox-wrap circle">
+                            <input type="checkbox" id="reason02" aria-checked="false" />
+                            <label for="reason02">
+                              <span>콘텐츠 등 서비스 부족</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="checkbox-wrap circle">
+                            <input type="checkbox" id="reason03" aria-checked="false" />
+                            <label for="reason03">
+                              <span>타 유사서비스 이용</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="checkbox-wrap circle">
+                            <input type="checkbox" id="reason04" aria-checked="false" />
+                            <label for="reason04">
+                              <span>사용빈도가 낮아서</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="checkbox-wrap circle">
+                            <input type="checkbox" id="reason05" aria-checked="false" />
+                            <label for="reason05">
+                              <span>기타</span>
+                            </label>
+                          </div>
+                          <div class="textarea-wrap">
+                            <textarea aria-label="기타 사유 입력" placeholder="기타 사유를 입력해 주세요."></textarea>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </fieldset>
+                </section>
+                <section class="section">
+                  <fieldset>
+                    <legend>환불 계좌 입력</legend>
+                    <div class="table-title">
+                      <h4 class="sub-title">환불 계좌 입력</h4>
+                      <div class="table-tip">
+                        <span class="required">
+                          <span class="sr-only">필수 입력 항목</span>
+                        </span>
+                        필수 표시는 필수 입력 항목으로 반드시 입력해 주세요.
+                      </div>
+                    </div>
+                    <div class="table-wrap">
+                      <!-- table 작업 시,
+                          <th> 안에 있는 label의 for와
+                          <td> 안에 있는 input의 id를 연결해 주세요.
+                          error, success 메시지가 있을 경우,
+                          input의 aria-describedby과
+                          메시지의 id를 연결해 주세요.
+                          input 입력 시,
+                          내용 전체 삭제 버튼 있을 경우
+                          .input-wrap에 .active-delete 클래스 추가
+                        -->
+                      <table class="table horizontal">
+                        <colgroup>
+                          <col class="colWidth190" />
+                          <col class="colWidthAuto" />
+                        </colgroup>
+                        <caption>
+                          환불 계좌 정보 입력. 은행명, 계좌번호, 예금주로 구성.
+                        </caption>
+                        <tbody>
+                          <tr>
+                            <th scope="row">
+                              <span>은행명</span>
+                              <span class="required">
+                                <span class="sr-only">필수 입력 항목</span>
+                              </span>
+                            </th>
+                            <td>
+                              <div class="select-wrap">
+                                <button class="selected" aria-label="은행명 선택하세요">
+                                  <span>= 선택하세요 =</span>
+                                </button>
+                                <ul class="select-list">
+                                  <li class="option">
+                                    <span>국민은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>SC제일은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>KEB하나은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>KEB하나은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>경남은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>광주은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>대구은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>부산은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>전북은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>제주은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>수협</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>신협</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>기업은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>케이뱅크</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>카카오뱅크</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>산업은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>농협</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>새마을금고</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>신한은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>시티은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>우리은행</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>우체국</span>
+                                  </li>
+                                  <li class="option">
+                                    <span>토스뱅크</span>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              <label for="accountNumber">
+                                <span>계좌번호</span>
+                                <span class="required">
+                                  <span class="sr-only">필수 입력 항목</span>
+                                </span>
+                              </label>
+                            </th>
+                            <td>
+                              <div class="input-wrap width560">
+                                <div class="input">
+                                  <input
+                                    type="text"
+                                    id="accountNumber"
+                                    aria-describedby="msgaccountNumber"
+                                    placeholder="- 없이 숫자만 입력해 주세요."
+                                  />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              <label for="accountHolder">
+                                <span>예금주</span>
+                                <span class="required">
+                                  <span class="sr-only">필수 입력 항목</span>
+                                </span>
+                              </label>
+                            </th>
+                            <td>
+                              <div class="input-wrap width140">
+                                <div class="input">
+                                  <input type="text" id="accountHolder" />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p class="refund-message">
+                        ※환불을 위해 고객님의 은행명, 계좌번호, 예금주명을 수집하고 있으며, 해당정보는 수집일로부터 5년 후 파기됩니다.
+                      </p>
+                    </div>
+                  </fieldset>
+                </section>
+                <div class="content-inner-footer">
+                  <div class="btn-wrap pos-header">
+                    <button type="button" class="btn extra-sm w180 secondary btn-service-cancel">
+                      <span>서비스 해지 신청</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <!-- 서비스 해지 상품이 없는 경우 -->
+              <!-- <div class="no-cut-service">
+                <p>서비스 해지 상품이 없습니다</p>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // .wp-body -->
+
+      <div class="footer-wrap" id="footer">
+        <footer>Copyright ⓒ HAND SIGN TALK TALK. All Rights Reserved.</footer>
+      </div>
+    </div>
+    <!-- // .wp-wrap -->
+
+    <!-- Script -->
+    <script src="../../js/pub_index.js"></script>
+    <!-- // Script -->
+  </body>
+</html>
